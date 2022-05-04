@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+import java.io.Console;
+import java.lang.reflect.*;
 public class Stemmer {
 	
 	//Checks if the character in a word is consonant or not
@@ -250,6 +251,7 @@ public class Stemmer {
 		return word;
 	}
 
+	//handles words ending with eed,ed,ing.
 	public String step1b(String word) {
 			
 		//flag to check it the second or the third conditions are true.
@@ -292,8 +294,6 @@ public class Stemmer {
 		}
 		
 		
-		
-		
 		//if the second or third cases are true:
 		if(secondThird)
 		{
@@ -320,8 +320,8 @@ public class Stemmer {
 	}
 	
 	
-	
-	public void step1c(String word)
+	//handels words ending with 'y' and having a vowel in the substring before 'y'.
+	public String step1c(String word)
 	{
 		if(endsWith(word,'y'))
 		{
@@ -329,12 +329,15 @@ public class Stemmer {
 			String stringBeforeY=word.substring(0, indexStep1c);
 			if(hasVowel(stringBeforeY))
 			{
-				word=stringBeforeY.concat("i");
+				word=stringBeforeY.concat("i"); //replace 'y' with 'i'
 			}
 		}
-		
+
+		return word;
 	}
-	
+
+	//handles changing words with double suffixes. 
+	//changes double suffixes to single suffixes, if m of the substring before the double suffix is >0
 	public String step2(String word)
 	{
            
@@ -444,6 +447,7 @@ public class Stemmer {
 		return word;
 	}
 
+	//changes the suffixes if the substring before the suffixes has m>0
 	public String step3(String word)
 	{
 		//FIRST CASE: (m>0)icate --->ic
@@ -485,6 +489,7 @@ public class Stemmer {
 		return word;
 	}
 
+    //changes the suffixes if the substring before the suffixes has m>1
     public String step4(String word)
 	{
         //FIRST CASE:(m>1)al --->""
@@ -591,11 +596,12 @@ public class Stemmer {
 		return word;
 	}
 
+	//handles removing the letter 'e' at the end of the word.
 	public String step5a(String word)
 	{
 		if(endsWith(word,'e'))
 		{
-			String stringBeforeE=word.substring(0,word.length()-1);
+			String stringBeforeE=word.substring(0,word.length()-1); //the substring before the letter e.
 			if((calcM(stringBeforeE)==1 && !checkPattern(stringBeforeE)) || (calcM(stringBeforeE)>1))
 			{
                word=stringBeforeE;
@@ -604,6 +610,7 @@ public class Stemmer {
 		return word;
 	}
 
+	//if m>1 and the word ends with 2 consonants, the last letter is removed.
 	public String step5b(String word)
 	{
 		if(calcM(word)>1 && endsWithDoubleCons(word) && endsWith(word,'l'))
@@ -613,20 +620,25 @@ public class Stemmer {
 		return word;
 	}
 
+    //Follows the steps to stem a word.
+	public String StemWord(String word)
+	{
+		word=step1A(word);
+		word=step1b(word);
+		word=step1c(word);
+		word=step2(word);
+		word=step3(word);
+		word=step4(word);
+		word=step5a(word);
+		word=step5b(word);
+		return word;
+	}
+
 	public static void main(String args[]) throws Exception {
-		String a = "probate";
-		String b="rate";
-		String cc="cease";
+		String a = "MULTIDIMENSIONAL";
+		a=a.toLowerCase();
 		Stemmer s = new Stemmer();
-		// String m = s.replaceM1(a, "es","er");
-		// String c=s.step1A(a);
-		// System.out.println(c);
-		// System.out.println(s.step1b(c));
-		// System.out.println(m);
-		String m=s.step5a(cc);
-		System.out.println(m);
-		//probate rate cease
-				
+		System.out.println(s.StemWord(a));
 		return;
 	}
 	
