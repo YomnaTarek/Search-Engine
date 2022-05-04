@@ -140,6 +140,7 @@ public class Stemmer {
 		}
 		 seq = String.join(seqStr, seqList);
 		 int m = countMatches(seq, "VC");
+		 System.out.println(m);
 		 return m;
 	}
 	//Checks if the last letter w,x,y -> false, returns true if last 3 letters follow the pattern : cons, vowel, cons
@@ -168,10 +169,91 @@ public class Stemmer {
 			return false;
 		}
 	}
+	//Checks if the oldWord contains a certain ending, if it does, it replaces the ending with the passed replacement and returns the newWord
+	//Else returns oldWord
+	public String replace(String oldWord, String ending, String replacement)
+	{
+		boolean ends = oldWord.endsWith(ending);
+		if(ends)
+		{
+			String newWord = oldWord.replace(ending, replacement);
+			return newWord;
+		}
+		else
+		{
+			
+			return oldWord;
+		}
+	}
+	//Same as previous function but checks on the m value>0
+	public String replaceM0(String oldWord, String ending, String replacement)
+	{
+		boolean ends = oldWord.endsWith(ending);
+		if(ends)
+		{
+			String[] stem = oldWord.split(ending);
+			if(calcM(stem[0])>0)
+			{
+				String newWord = stem[0].concat(replacement);
+				return newWord;
+			}
+			return oldWord;
+			
+		}
+		else
+		{
+			return oldWord;
+		}
+	}
+	//Same as previous function but checks on the m value >1
+	public String replaceM1(String oldWord, String ending, String replacement)
+	{
+		boolean ends = oldWord.endsWith(ending);
+		if(ends)
+		{
+			String[] stem = oldWord.split(ending);
+			if(calcM(stem[0])>1)
+			{
+				String newWord = stem[0].concat(replacement);
+				return newWord;
+			}
+			return oldWord;
+			
+		}
+		else
+		{
+			return oldWord;
+		}
+	}
+	//Getting rid of plurals
+	public String step1A(String word)
+	{
+		if(word.endsWith("sses"))
+		{
+			word =  replace(word, "sses", "ss");
+		}
+		else if(word.endsWith("ies"))
+		{
+			word =  replace(word, "ies", "i");
+		}
+		else if(word.endsWith("ss"))
+		{
+			word = replace(word, "ss", "ss");
+		}
+		else if(word.endsWith("s"))
+		{
+			word = replace(word, "s", "");
+		}
+		else
+		{
+			return word;
+		}
+		return word;
+	}
 	public static void main(String args[]) throws Exception {
-		String a = "ballpow";
+		String a = "Troubles";
 		Stemmer s = new Stemmer();
-		boolean m = s.checkPattern(a);
+		String m = s.replaceM1(a, "es","er");
 		System.out.println(m);
 				
 		return;
