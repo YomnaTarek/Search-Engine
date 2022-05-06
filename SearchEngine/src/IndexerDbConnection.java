@@ -2,6 +2,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+
+
+import java.sql.ResultSetMetaData;
+
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -10,7 +14,7 @@ public class IndexerDbConnection {
 	
 		static Statement statement;
 		static Connection conn;
-		    
+		   
 		static public void DatabaseConnect(){
 		
 			String url = "jdbc:sqlserver://DESKTOP-4T81S99;databaseName=SearchEngine;integratedSecurity=true;encrypt=true;trustServerCertificate=true;";
@@ -19,12 +23,12 @@ public class IndexerDbConnection {
 		 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");	
 		 		
 		 		//Creating a connection to the database
-		 		Connection conn = DriverManager.getConnection(url);
+		 		conn = DriverManager.getConnection(url);
 		 		//System.out.println(conn);
 		 		//Executing SQL query and fetching the result
-		 		Statement st = conn.createStatement();
+		 		statement = conn.createStatement();
 		 		String sqlStr = "select * from Link";
-		 		ResultSet rs = st.executeQuery(sqlStr);
+		 		ResultSet rs = statement.executeQuery(sqlStr);
 		 		while (rs.next()) {
 		 			System.out.println(rs.getString(2));
 		 		}		
@@ -33,6 +37,7 @@ public class IndexerDbConnection {
 		         System.out.print("Database Not Connected"+e);
 		     }
 		  }
+
 
 	    //Reset beginIndexing to 0 for all the words that their urls have started indexing but are not finished yet(endIndexing=0). 
 	    static public void ResetAlreadyStarted(Integer numThreads) throws SQLException {  //nondone
@@ -88,11 +93,33 @@ public class IndexerDbConnection {
 			prepStatement.executeUpdate();
 			
 		}
-
-
+		
+		//Gets the tags as a list from database
+		static public void getWordDegrees(ArrayList<String> degrees)
+		{
+			try {
+			ResultSet rs = statement.executeQuery("SELECT * FROM IndexingWords");
+			ResultSetMetaData rsmd = rs.getMetaData();
+			int columnCount = rsmd.getColumnCount();
+			for (int i = 4; i <= columnCount; i++ ) {
+			  String name = rsmd.getColumnName(i);
+			  degrees.add(name);
+			}
+			}
+			catch(Exception e)
+			{				
+				System.out.print("couldnt fetch"+e);	
+			}
+		
+		}
 	    public static void main(String args[]) throws Exception {
+			
 			IndexerDbConnection id = new IndexerDbConnection();
 			id.DatabaseConnect();
+			ArrayList<String> degrees = new ArrayList<String>();
+			id.getWordDegrees(degrees);
+			System.out.println(degrees);
+			
 			return;
 	    }
 }
