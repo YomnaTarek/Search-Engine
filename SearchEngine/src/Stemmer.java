@@ -8,6 +8,7 @@ public class Stemmer {
 	//Checks if the character in a word is consonant or not
 	public Boolean isConsonant(String word, int index)
 	{
+		
 		char letter = word.charAt(index);
 		if ("aeiouAEIOU".indexOf(letter) != -1)
 		{
@@ -16,7 +17,7 @@ public class Stemmer {
 		else
 		{
 			//Vowel = consonant +y
-			if(letter == 'y' || letter == 'Y')
+			if((letter == 'y' || letter == 'Y') && index != 0)
 			{
 				char beforeLetter = word.charAt(index-1);
 				if ("aeiouAEIOU".indexOf(beforeLetter) == -1)
@@ -106,6 +107,7 @@ public class Stemmer {
 		List<String>seqList = new ArrayList<String>(Arrays.asList(seqArray)); 
 		for (int i = 0 ;i<word.length();i++)
 		{
+			
 			if(isConsonant(word,i))
 			{
 				if(i != 0)
@@ -176,7 +178,8 @@ public class Stemmer {
 		boolean ends = oldWord.endsWith(ending);
 		if(ends)
 		{
-			String newWord = oldWord.replace(ending, replacement);
+			String subString = oldWord.substring(0,oldWord.length()-ending.length());
+			String newWord = subString.concat(replacement);
 			return newWord;
 		}
 		else
@@ -191,10 +194,10 @@ public class Stemmer {
 		boolean ends = oldWord.endsWith(ending);
 		if(ends)
 		{
-			String[] stem = oldWord.split(ending);
-			if(calcM(stem[0])>0)
+			String subString = oldWord.substring(0,oldWord.length()-ending.length());
+			if(calcM(subString)>0)
 			{
-				String newWord = stem[0].concat(replacement);
+				String newWord = subString.concat(replacement);
 				return newWord;
 			}
 			return oldWord;
@@ -211,10 +214,10 @@ public class Stemmer {
 		boolean ends = oldWord.endsWith(ending);
 		if(ends)
 		{
-			String[] stem = oldWord.split(ending);
-			if(calcM(stem[0])>1)
+			String subString = oldWord.substring(0,oldWord.length()-ending.length());
+			if(calcM(subString)>1)
 			{
-				String newWord = stem[0].concat(replacement);
+				String newWord = subString.concat(replacement);
 				return newWord;
 			}
 			return oldWord;
@@ -291,6 +294,7 @@ public class Stemmer {
 				word=stringBeforeING;
 				secondThird=true;
 			}
+			System.out.println("step1b"+word);
 		}
 		
 		
@@ -623,14 +627,18 @@ public class Stemmer {
     //Follows the steps to stem a word.
 	public String StemWord(String word)
 	{
-		word=step1A(word);
-		word=step1b(word);
-		word=step1c(word);
-		word=step2(word);
-		word=step3(word);
-		word=step4(word);
-		word=step5a(word);
-		word=step5b(word);
+		if(word.length()>1)
+		{
+			word=step1A(word);
+			word=step1b(word);
+			word=step1c(word);
+			word=step2(word);
+			word=step3(word);
+			word=step4(word);
+			word=step5a(word);
+			word=step5b(word);
+		
+		}
 		return word;
 	}
 
