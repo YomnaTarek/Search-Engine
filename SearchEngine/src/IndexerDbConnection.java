@@ -89,12 +89,6 @@ public class IndexerDbConnection {
 			
 		}
 
-	    static public void IncrementID() throws SQLException{
-		 PreparedStatement prepStatement= conn.prepareStatement("SET @a = -1", Statement.RETURN_GENERATED_KEYS );
-		 prepStatement.executeUpdate();
-		 prepStatement= conn.prepareStatement("UPDATE Link SET id = @a:=@a+1", Statement.RETURN_GENERATED_KEYS );
-		 prepStatement.executeUpdate();
-	   }
 
 	    public static void main(String args[]) throws Exception {
 			IndexerDbConnection id = new IndexerDbConnection();
