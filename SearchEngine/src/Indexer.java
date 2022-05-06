@@ -7,7 +7,6 @@ public class Indexer {
 	}
 	
 	 private static class Index extends Thread{
-		 
-	 }
+
 	
-}
+     }
