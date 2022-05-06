@@ -140,6 +140,15 @@ public class Indexer {
 							 {
 								 stemmedWords.add(splittedText[i]);
 								 //call db function to add the stem to db
+								 try 
+								 {
+									IndexerDbConnection.AddNewWord(splittedText[i], degree);
+								 } 
+								 catch (SQLException e) 
+								 {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								 }
 								 continue;
 							 }
 							 if(!splittedText[i].isBlank() && !splittedText[i].isEmpty() && !isNumber(splittedText[i])) //Check if the splittedText is not blank or empty or a number 
@@ -150,10 +159,29 @@ public class Indexer {
 								 { 
 									 stemmedWords.add(stem);  //Add the stem to the stemmedWords
 									//Call db function to add the stem to db
+									 try 
+									 {
+										IndexerDbConnection.AddNewWord(stem, degree);
+									 } 
+									 catch (SQLException e) 
+									 {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									 }
 								 }
 								 else
 								 {
-									//Increment occurence of the stem
+									//Increment occurrence of the stem
+									 try 
+									 {
+										IndexerDbConnection.IncrementCounts(stem, degree);
+									 } 
+									 catch (SQLException e) 
+									 {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									 }
+									 
 								 }
 							 }
 						 }
