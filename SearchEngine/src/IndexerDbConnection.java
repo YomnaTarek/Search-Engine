@@ -85,10 +85,30 @@ public class IndexerDbConnection {
 		//Dropping the IndexingWords Table.
 		static public void deleteIndexingWordsTable() throws SQLException {
 			PreparedStatement prepStatement= conn.prepareStatement("DELETE FROM IndexingWords", Statement.RETURN_GENERATED_KEYS );
-			prepStatement.executeUpdate();
+			prepStatement.executeQuery();
 			
 		}
 
+		//Increment the count for h1,h2,h3,h4,h5,h6,italic,bold,p.
+		static public void IncrementCounts(String word,String degree) throws SQLException {
+			String foundCount=null;
+			PreparedStatement prepStatement= conn.prepareStatement("SELECT ? FROM IndexingWords WHERE word=?", Statement.RETURN_GENERATED_KEYS );
+			prepStatement.setString(1, degree);
+			prepStatement.setString(2, word);
+			ResultSet result = prepStatement.executeQuery();
+			if (result.next()) 
+			{
+				foundCount= result.getString(1);
+		    }
+			if(foundCount!=null)
+			{
+				Integer newCount=Integer.parseInt(foundCount)+1;
+				prepStatement= conn.prepareStatement("UPDATE IndexingWords set ?="+newCount.toString()+ " WHERE word=?", Statement.RETURN_GENERATED_KEYS );
+				prepStatement.setString(1, degree);
+				prepStatement.setString(2, word);
+				prepStatement.executeUpdate();
+			}
+		}
 
 	    public static void main(String args[]) throws Exception {
 			IndexerDbConnection id = new IndexerDbConnection();
