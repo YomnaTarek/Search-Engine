@@ -110,6 +110,15 @@ public class IndexerDbConnection {
 			}
 		}
 
+		//Adding a new word to the IndexingWords table.
+		static public void AddNewWord(String word,String degree) throws SQLException {
+
+			PreparedStatement prepStatement= conn.prepareStatement("INSERT INTO IndexingWords(word,?) VALUES (?,1)", Statement.RETURN_GENERATED_KEYS );
+			prepStatement.setString(1, degree);
+			prepStatement.setString(2,word);
+			prepStatement.executeQuery();
+		}
+
 	    public static void main(String args[]) throws Exception {
 			IndexerDbConnection id = new IndexerDbConnection();
 			id.DatabaseConnect();
