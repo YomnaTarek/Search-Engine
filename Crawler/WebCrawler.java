@@ -1,3 +1,5 @@
+package Crawler;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -10,29 +12,31 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+
 public class WebCrawler {
-
-  //Number of Crawled pages is 5000 pages
-  int threshold=5000;
+//Number of Crawled pages is 5000 pages
+int threshold=5000;
   
-  //Number of threads entered by the user (default =5)
-  int numberOfThreads=5;
+//Number of threads entered by the user (default =5)
+int numberOfThreads=5;
 
-  //appropriate data structure to determine the order of page visits is a queue
-  static List<URL> LinksQueue;
+//appropriate data structure to determine the order of page visits is a queue
+static List<URL> LinksQueue;
 
   //function to read number of threads from user
-void readNumberOfThreads()
+public static int readNumberOfThreads()
 {
     BufferedReader consoleReader = new BufferedReader(new InputStreamReader(System.in)); 
+    int numberOfThreads=0;
     try {
         String temp = consoleReader.readLine();
-        numberOfThreads=Integer.parseInt(temp);
+       numberOfThreads=Integer.parseInt(temp);
 
     } catch (IOException e) {
         
         e.printStackTrace();
     }
+    return numberOfThreads;
 }
 
 //function to read original URLs from the seed list file
@@ -61,7 +65,7 @@ public static List<URL>  readingSeed()
 }
 
 //function to download html document from url and parse it for new hyperLinks
-static List<URL> HTMLParse(URL originalURL)
+public static List<URL> HTMLParse(URL originalURL)
 {
     ArrayList<URL> discoredURLs=new ArrayList<>();
     try {
@@ -89,8 +93,11 @@ static List<URL> HTMLParse(URL originalURL)
                   continue;
               if(!RobotTest(originalURL, discoveredLink))
                   continue;
-         //if we passed all the restrictions we add the normalized link to an array of URLs and return it     
+         //if we passed all the restrictions we add the normalized link to an array of URLs and return it  
+         //making sure first that the url does not already exsist in the array
+         if(!discoredURLs.contains(new URL( discoveredLink)))   
          discoredURLs.add(new URL( discoveredLink));
+
           }
         } catch (IOException e) {
             System.out.print("Jsoup Error: "+ e +"\n" );

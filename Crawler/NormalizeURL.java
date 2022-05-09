@@ -1,4 +1,5 @@
 //This code is imported from the internet (instead of a library) to normalize URLs
+package Crawler;
 
 
 import java.net.MalformedURLException;
