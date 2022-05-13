@@ -231,13 +231,15 @@ public class Indexer {
 				shareRestOfThreads=(linksList.size()/countOfThreads)*(countOfThreads-1); //share for each of the threads other than first thread.
 				shareFirstThread=linksList.size()-shareRestOfThreads; //share of first thread
 			}
+			int threadShareEnd;
 			//Create the threads and assign each one their share
 			for (int i = 0 ;i<countOfThreads;i++)
 			{
 				if(i == 0)
 				{
 					int threadId=i;
-					Thread indexer=new Index(threadId,key, linksList, i*shareFirstThread, shareFirstThread);
+					Thread indexer=new Index(threadId,key, linksList,0, shareFirstThread);
+					threadShareEnd=shareFirstThread;
 					indexer.setName("Thread "+ i);
 					indexerThreads.add(indexer);
 					indexer.start();
@@ -245,7 +247,8 @@ public class Indexer {
 				else
 				{
 					int threadId=i;
-					Thread indexer=new Index(threadId,key, linksList, i*shareRestOfThreads,shareRestOfThreads);
+					Thread indexer=new Index(threadId,key, linksList,threadShareEnd,threadShareEnd+shareRestOfThreads);
+					threadShareEnd=threadShareEnd+shareRestOfThreads;
 					indexer.setName("Thread "+ i);
 					indexerThreads.add(indexer);
 					indexer.start();
