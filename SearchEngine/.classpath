@@ -6,7 +6,15 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/saiko/Downloads/sqljdbc_10.2/enu/mssql-jdbc-10.2.0.jre17.jar"/>
-	<classpathentry kind="lib" path="C:/Users/saiko/Downloads/jsoup-1.8.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saiko/Downloads/sqljdbc_10.2/enu/mssql-jdbc-10.2.0.jre17.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/saiko/Downloads/jsoup-1.8.1.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

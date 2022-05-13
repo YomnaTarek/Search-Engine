@@ -1,3 +1,4 @@
+package Indexer;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -7,6 +8,8 @@ import java.util.Scanner;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
+
+import DBManager.IndexerDbConnection;
 
 public class Indexer {
 	
