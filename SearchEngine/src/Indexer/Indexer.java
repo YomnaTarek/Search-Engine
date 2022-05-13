@@ -2,8 +2,10 @@ package Indexer;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -16,12 +18,11 @@ public class Indexer {
 	public static ArrayList<String> degrees;
 	public static ArrayList<String> stopwords;
 	public static int countOfThreads;
-	public ArrayList<Thread> indexerThreads;
-	public Integer key = 0; 
-	public ArrayList<String> linksList;
-	public int share;
-	public int shareRestOfThreads;
-	public int shareFirstThread;
+	public static ArrayList<Thread> indexerThreads;
+	public static Integer key = 0; 
+	public static ArrayList<String> linksList;
+	public static int shareRestOfThreads;
+	public static int shareFirstThread;
 
 	public Indexer() throws InterruptedException, SQLException 
 	{
@@ -33,31 +34,7 @@ public class Indexer {
 			e.printStackTrace();
 		}
 		
-		for (int i = 0 ;i<countOfThreads;i++)
-		{
-			int threadId=i;
-			Thread indexer=new Index(threadId,key);
-			indexer.setName("Thread "+ i);
-			indexerThreads.add(indexer);
-			indexer.start();
-		}
 		
-		for(int i = 0; i<indexerThreads.size();i++)
-		{
-			indexerThreads.get(i).join();
-		}
-		
-		linksList = IndexerDbConnection.returnUnIndexedUrls();
-		if(linksList.size() % countOfThreads == 0)
-		{
-			share = linksList.size()/countOfThreads;
-			//logic el ta2seema
-		}
-		else
-		{
-			shareRestOfThreads=(linksList.size()/countOfThreads)*(countOfThreads-1); //share for each of the threads other than first thread.
-			shareFirstThread=linksList.size()-shareRestOfThreads; //share of first thread
-		}		
 		
 	}
 	
@@ -83,10 +60,17 @@ public class Indexer {
 	 private static class Index extends Thread{
 		 Integer threadId;
 		 Integer key; //For synchronization purpose
-		 public Index(int id, int k)
+		 ArrayList<String> documents;
+		 Integer start;
+		 Integer size;
+		 public Index(int id, int k, ArrayList<String> docs, int start, int size)
 		 {
 			 this.threadId = id;
 			 this.key = k;
+			 this.documents = docs;
+			 this.start = start;
+			 this.size = size;
+			 
 		 }
 		 
 		 public void run()
@@ -234,15 +218,47 @@ public class Indexer {
 			 }
 }
 	 public static void main(String args[]) throws Exception {
-			/*
-			 * Indexer i = new Indexer(); ArrayList<String> stopwords = new
-			 * ArrayList<String>(); i.getStopWords("stopwords.txt", stopwords); Document doc
-			 * = Jsoup.connect(
-			 * "https://code.visualstudio.com/docs/languages/java#:~:text=Once%20you've%20installed%20the,%22Java%3A%20Getting%20Started%22."
-			 * ).timeout(0).get(); Elements words =
-			 * doc.select("h1, h2, h3, h4, h5, h6,p,title,i,b"); ArrayList<String>
-			 * stemmedWords = new ArrayList<String>(); i.parseText(words, "p", stemmedWords,
-			 * stopwords); System.out.println(stemmedWords); return;
-			 */
+			Indexer indexer = new Indexer();
+			
+			//Get the share for each thread
+			if(linksList.size() % countOfThreads == 0)
+			{
+				shareRestOfThreads = linksList.size()/countOfThreads;
+				shareFirstThread = shareRestOfThreads;
+			}
+			else
+			{
+				shareRestOfThreads=(linksList.size()/countOfThreads)*(countOfThreads-1); //share for each of the threads other than first thread.
+				shareFirstThread=linksList.size()-shareRestOfThreads; //share of first thread
+			}
+			//Create the threads and assign each one their share
+			for (int i = 0 ;i<countOfThreads;i++)
+			{
+				if(i == 0)
+				{
+					int threadId=i;
+					Thread indexer=new Index(threadId,key, linksList, i*shareFirstThread, shareFirstThread);
+					indexer.setName("Thread "+ i);
+					indexerThreads.add(indexer);
+					indexer.start();
+				}
+				else
+				{
+					int threadId=i;
+					Thread indexer=new Index(threadId,key, linksList, i*shareRestOfThreads,shareRestOfThreads);
+					indexer.setName("Thread "+ i);
+					indexerThreads.add(indexer);
+					indexer.start();
+				}
+			}	
+			linksList = IndexerDbConnection.returnUnIndexedUrls();
+			
+			for(int i = 0; i<indexerThreads.size();i++)
+			{
+				indexerThreads.get(i).join();
+			}
+			
+			
+			
 		}
 }
