@@ -1,0 +1,8 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\habib\\Downloads\\jsoup-1.14.3.jar",
+        "c:\\Users\\habib\\Downloads\\sqljdbc_10.2\\enu\\mssql-jdbc-10.2.0.jre17.jar",
+        "c:\\mpj-v0_44\\lib\\mpj.jar"
+    ]
+}

@@ -29,6 +29,7 @@ public static int readNumberOfThreads()
     BufferedReader consoleReader = new BufferedReader(new InputStreamReader(System.in)); 
     int numberOfThreads=0;
     try {
+        System.out.print("Please enter number of threads:"+"\n" );	
         String temp = consoleReader.readLine();
        numberOfThreads=Integer.parseInt(temp);
 
