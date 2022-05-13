@@ -111,11 +111,12 @@ public class IndexerDbConnection {
 		}
 
 		//Increment the count for h1,h2,h3,h4,h5,h6,italic,bold,p.
-		static public void IncrementCounts(String word,String degree) throws SQLException {
+		static public void IncrementCounts(String url, String word,String degree) throws SQLException {
 			String foundCount=null;
-			PreparedStatement prepStatement= conn.prepareStatement("SELECT ? FROM IndexingWords WHERE word=?", Statement.RETURN_GENERATED_KEYS );
-			prepStatement.setString(1, degree);
-			prepStatement.setString(2, word);
+			PreparedStatement prepStatement= conn.prepareStatement("SELECT "+degree+" FROM IndexingWords WHERE word=? and url=?", Statement.RETURN_GENERATED_KEYS );
+
+			prepStatement.setString(1, word);
+			prepStatement.setString(2, url);
 			ResultSet result = prepStatement.executeQuery();
 			if (result.next()) 
 			{
@@ -124,19 +125,31 @@ public class IndexerDbConnection {
 			if(foundCount!=null)
 			{
 				Integer newCount=Integer.parseInt(foundCount)+1;
-				prepStatement= conn.prepareStatement("UPDATE IndexingWords set ?="+newCount.toString()+ " WHERE word=?", Statement.RETURN_GENERATED_KEYS );
-				prepStatement.setString(1, degree);
-				prepStatement.setString(2, word);
+				prepStatement= conn.prepareStatement("UPDATE IndexingWords set "+degree+"="+newCount.toString()+ " WHERE word=? and url=?", Statement.RETURN_GENERATED_KEYS );
+				//prepStatement.setString(1, degree);
+				prepStatement.setString(1, word);
+				prepStatement.setString(2, url);
 				prepStatement.executeUpdate();
+			}
+			else
+			{
+				Integer count = 1;
+				prepStatement= conn.prepareStatement("UPDATE IndexingWords set "+degree+"="+count.toString()+" WHERE word=? and url=?", Statement.RETURN_GENERATED_KEYS );
+				//prepStatement.setString(1, degree);
+				prepStatement.setString(1, word);
+				prepStatement.setString(2, url);
+				prepStatement.executeUpdate();
+				
 			}
 		}
 
 		//Adding a new word to the IndexingWords table.
-		static public void AddNewWord(String word,String degree) throws SQLException {
+		static public void AddNewWord(String url, String word,String degree) throws SQLException {
 
-			PreparedStatement prepStatement= conn.prepareStatement("INSERT INTO IndexingWords(word,?) VALUES (?,1)", Statement.RETURN_GENERATED_KEYS );
-			prepStatement.setString(1, degree);
-			prepStatement.setString(2,word);
+			PreparedStatement prepStatement= conn.prepareStatement("INSERT INTO IndexingWords(word, url, "+degree+") VALUES (?,?,1)", Statement.RETURN_GENERATED_KEYS );
+			//prepStatement.setString(1, degree);
+			prepStatement.setString(1,word);
+			prepStatement.setString(2,url);
 			prepStatement.executeQuery();
 		}
 		
@@ -183,8 +196,8 @@ public class IndexerDbConnection {
 
       //returns unindexed urls 
         static public ArrayList<String> returnUnIndexedUrls() throws SQLException {
-        ArrayList<String> unindexed = null;
-        PreparedStatement prepStatement= conn.prepareStatement("SELECT url FROM Link WHERE endIndexing =0 and beginIndexing=0 limit 1", Statement.RETURN_GENERATED_KEYS);
+        ArrayList<String> unindexed = new ArrayList<String>();
+        PreparedStatement prepStatement= conn.prepareStatement("SELECT url FROM Link WHERE beginIndexing=0", Statement.RETURN_GENERATED_KEYS);
         ResultSet result = prepStatement.executeQuery();
         while(result.next())
         {
@@ -192,6 +205,45 @@ public class IndexerDbConnection {
         }
         return unindexed;
     }
+        static public boolean isExistWord(String url, String word) throws SQLException
+        {
+	        PreparedStatement prepStatement= conn.prepareStatement("SELECT count(*) FROM IndexingWords WHERE url=? and word=?");
+            prepStatement.setString(1, url);
+            prepStatement.setString(2, word);
+            ResultSet result=prepStatement.executeQuery();
+            int count;
+            if ( result.next() ) 
+            {
+              count = result.getInt(1);
+              if(count>0)
+              {
+                  return true;
+              }
+            
+              else
+              {
+                  return false;
+              }
+            }
+            return false;
+	            
+          }
+        
+      //removing thread from threads table
+        static public void removeThread(String link,Integer threadId) throws SQLException {
+            PreparedStatement prepStatement= conn.prepareStatement( "DELETE FROM Threads WHERE url=? and threadId=?", Statement.RETURN_GENERATED_KEYS );
+            prepStatement.setString(1, link);
+            prepStatement.setString(2,threadId.toString());
+            prepStatement.executeQuery();
+        }
+        //adding thread to threads table
+        static public void addThread (String link,Integer threadId) throws SQLException {
+            PreparedStatement prepStatement= conn.prepareStatement( "INSERT INTO Threads(url,threadId) VALUES(?,?)", Statement.RETURN_GENERATED_KEYS);
+            prepStatement.setString(1,link);
+            prepStatement.setString(2,threadId.toString());
+            prepStatement.executeQuery();
+        }
+        
 	    public static void main(String args[]) throws Exception {
 			
 			IndexerDbConnection id = new IndexerDbConnection();

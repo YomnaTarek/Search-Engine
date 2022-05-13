@@ -15,17 +15,17 @@ import DBManager.IndexerDbConnection;
 
 public class Indexer {
 	
-	public static ArrayList<String> degrees;
-	public static ArrayList<String> stopwords;
+	public static ArrayList<String> degrees = new ArrayList<String>();
+	public static ArrayList<String> stopwords = new ArrayList<String>();
 	public static int countOfThreads;
-	public static ArrayList<Thread> indexerThreads;
+	public static ArrayList<Thread> indexerThreads = new ArrayList<Thread>();
 	public static Integer key = 0; 
-	public static ArrayList<String> linksList;
+	public static ArrayList<String> linksList = new ArrayList<String>();
 	public static int shareRestOfThreads;
 	public static int shareFirstThread;
 
 	public Indexer() throws InterruptedException, SQLException 
-	{
+	{  
 		getStopWords("stopwords.txt", stopwords);
 		try {
 			countOfThreads = IndexerDbConnection.getNumThreads();
@@ -33,14 +33,13 @@ public class Indexer {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		
+
 	}
 	
 	//This function fetches the list of stopwords from the stopword.txt
 	public void getStopWords(String filename, ArrayList<String>stopWordsList)
 	 {
+		stopWordsList = new ArrayList<String>();
 		 try {
 		      File myObj = new File(filename);
 		      Scanner myReader = new Scanner(myObj);
@@ -49,11 +48,13 @@ public class Indexer {
 		        stopWordsList.add(data);
 		        
 		      }
+		      stopwords = stopWordsList;
 		      myReader.close();
 		    } catch (FileNotFoundException e) {
 		      System.out.println("An error occurred.");
 		      e.printStackTrace();
 		    }
+		 
 	 }	
 
 
@@ -62,34 +63,26 @@ public class Indexer {
 		 Integer key; //For synchronization purpose
 		 ArrayList<String> documents;
 		 Integer start;
-		 Integer size;
-		 public Index(int id, int k, ArrayList<String> docs, int start, int size)
+		 Integer end;
+		 public Index(int id, int k, ArrayList<String> docs, int start, int end)
 		 {
 			 this.threadId = id;
 			 this.key = k;
 			 this.documents = docs;
 			 this.start = start;
-			 this.size = size;
+			 this.end = end;
 			 
 		 }
 		 
 		 public void run()
 		 {
+			 
 			String link = null;
-			while(true)
+			for(int k = start ;k<end;k++)
 			{
-				synchronized(this.key) {
-					try 
-					{
-						//Get the first unindexed link from the database
-						link=IndexerDbConnection.getUnIndexedUrl();	
-					} 
-					catch (SQLException e) 
-					{
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
 					
+					System.out.println("Thread no. "+this.threadId+" parsing url" + this.documents.get(k));
+					link = documents.get(k);
 					//If link == null then we break the outer most while loop
 					if (link == null)
 					{
@@ -101,12 +94,13 @@ public class Indexer {
 						{
 							//If the link is not null then we start the indexing process for this link
 							IndexerDbConnection.BeginIndexing(link.toString());
+							
 						} catch (SQLException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
 					}
-			}
+			
 			//We use the jsoup library to get the html content of this link we fetched from the database
 			Document document = null;
 			try 
@@ -127,13 +121,25 @@ public class Indexer {
 				//degree column (if inserted before in db)
 				for(int i = 0 ;i<degrees.size();i++)
 				{
-					parseText(htmlDoc, degrees.get(i),stemmedWords,stopwords);
+					try {
+						parseText(link,htmlDoc, degrees.get(i),stemmedWords,stopwords);
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 			}
-		 
-		 }
-		 }
+			//Set end indexing of this url to 1 to mark it as fully parsed
+			try {
+				IndexerDbConnection.EndIndexing(link);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
+			}
+		 }
+	 }	
 			 //This function checks if a string is number or not
 			 static boolean isNumber(String s)
 		    {
@@ -144,56 +150,87 @@ public class Indexer {
 		        return true;
 		    }
 			 
-			public static void parseText(Elements textDoc, String degree, ArrayList<String> stemmedWords,ArrayList<String> stopwords )
+			public static void parseText(String link, Elements textDoc, String degree, ArrayList<String> stemmedWords,ArrayList<String> stopwords ) throws SQLException
 			 {
 				 Elements selectedWords = textDoc.select(degree); //We select from the document the text based on whether the degree passed is h1, h2, h3, ..
 				 String extractedText =  selectedWords.text(); //We extract the text content
 				 String[] splittedText = null;
+				 ArrayList<String> arrayOfWords = new ArrayList<String>();
 				 if(extractedText.length() != 0)
 				 {
-					 splittedText = extractedText.split("[^a-zA-Z0-9']"); //We split the text into words
+					 splittedText = extractedText.split("[^a-zA-Z0-9]"); //We split the text into words
+					
+					 for(int i = 0 ;i<splittedText.length;i++)
+					 {
+						 if(splittedText[i] != " ")
+						 {
+							 arrayOfWords.add(splittedText[i]);	
+						 }
+					 }
 				 }
 				
-				 if(splittedText.length != 0)
+				 
+				 if(arrayOfWords.size() != 0)
 				 {
-					 ArrayList<String> stemming = new ArrayList<String>(); //This array list will hold the stemmed words
 					 Stemmer s = new Stemmer();
-					 for (int i=0 ;i<splittedText.length;i++)
+					 for (int i=0 ;i<arrayOfWords.size();i++)
 					 {
-						 splittedText[i] = splittedText[i].toLowerCase(); 
-						 if(!stopwords.contains(splittedText[i])) //Check if the current word is a stopword or not
+						 arrayOfWords.set(i, arrayOfWords.get(i).toLowerCase()) ; 
+						 if(!stopwords.contains(arrayOfWords.get(i))) //Check if the current word is a stopword or not
 						 {
-							 if(isNumber(splittedText[i]) && splittedText[i].length() == 4) //Check if the string is a year for example
+							 if(isNumber(arrayOfWords.get(i)) && arrayOfWords.get(i).length() == 4) //Check if the string is a year for example
 							 {
-								 stemmedWords.add(splittedText[i]);
-								 //call db function to add the stem to db
-								 try 
-								 {
-									IndexerDbConnection.AddNewWord(splittedText[i], degree);
-								 } 
-								 catch (SQLException e) 
-								 {
-									// TODO Auto-generated catch block
-									e.printStackTrace();
-								 }
-								 continue;
-							 }
-							 if(!splittedText[i].isBlank() && !splittedText[i].isEmpty() && !isNumber(splittedText[i])) //Check if the splittedText is not blank or empty or a number 
-							 {
-								 System.out.println(splittedText[i]);
-								 String stem = s.StemWord(splittedText[i]); //Stem the splittedText
-								 if(!stemmedWords.contains(stem)) //Check if it has been adde to the stemmedWords before
+								 boolean flag = IndexerDbConnection.isExistWord(link, arrayOfWords.get(i));
+								 if(!flag) //Check if it has been added to the stemmedWords before
 								 { 
-									 stemmedWords.add(stem);  //Add the stem to the stemmedWords
-									//Call db function to add the stem to db
+									 stemmedWords.add(arrayOfWords.get(i));
+									 //call db function to add the stem to db
 									 try 
 									 {
-										IndexerDbConnection.AddNewWord(stem, degree);
+										IndexerDbConnection.AddNewWord(link,arrayOfWords.get(i), degree);
 									 } 
 									 catch (SQLException e) 
 									 {
 										// TODO Auto-generated catch block
 										e.printStackTrace();
+									 }
+									 continue;
+								 }
+								 else
+								 {
+									//Increment occurrence of the stem
+									 try 
+									 {
+										IndexerDbConnection.IncrementCounts(link,arrayOfWords.get(i), degree);
+									 } 
+									 catch (SQLException e) 
+									 {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									 } 
+								 }
+							 }
+							 if(!arrayOfWords.get(i).isBlank() && !arrayOfWords.get(i).isEmpty() && !isNumber(arrayOfWords.get(i))) //Check if the splittedText is not blank or empty or a number 
+							 {
+								 //System.out.println(splittedText[i]);
+								 String stem = s.StemWord(arrayOfWords.get(i)); //Stem the splittedText
+								 boolean flag2 = IndexerDbConnection.isExistWord(link, stem);
+								 if(!flag2) //Check if it has been added to the stemmedWords before
+								 { 
+									 
+									 if(stem.length()>1)
+									 {
+										 stemmedWords.add(stem);  //Add the stem to the stemmedWords
+										//Call db function to add the stem to db
+										 try 
+										 {
+											IndexerDbConnection.AddNewWord(link,stem, degree);
+										 } 
+										 catch (SQLException e) 
+										 {
+											// TODO Auto-generated catch block
+											e.printStackTrace();
+										 }
 									 }
 								 }
 								 else
@@ -201,7 +238,7 @@ public class Indexer {
 									//Increment occurrence of the stem
 									 try 
 									 {
-										IndexerDbConnection.IncrementCounts(stem, degree);
+										IndexerDbConnection.IncrementCounts(link,stem, degree);
 									 } 
 									 catch (SQLException e) 
 									 {
@@ -214,12 +251,18 @@ public class Indexer {
 						 }
 					 }
 					 
-				 }	 
+				 }
+				 
 			 }
-}
+
 	 public static void main(String args[]) throws Exception {
-			Indexer indexer = new Indexer();
+			Indexer indexerMain = new Indexer();
+			System.out.println("*******************INDEXER***************************");
+			System.out.println("stopwords " + stopwords);
+			System.out.println("count of threads " + countOfThreads);
+			linksList = IndexerDbConnection.returnUnIndexedUrls();
 			
+			System.out.println("list of links" + linksList);
 			//Get the share for each thread
 			if(linksList.size() % countOfThreads == 0)
 			{
@@ -228,40 +271,44 @@ public class Indexer {
 			}
 			else
 			{
-				shareRestOfThreads=(linksList.size()/countOfThreads)*(countOfThreads-1); //share for each of the threads other than first thread.
-				shareFirstThread=linksList.size()-shareRestOfThreads; //share of first thread
+				shareRestOfThreads=(linksList.size()/countOfThreads); //share for each of the threads other than first thread.
+				shareFirstThread=linksList.size()-(shareRestOfThreads*(countOfThreads-1)); //share of first thread
 			}
-			int threadShareEnd;
+			int threadShareEnd = 0;
 			//Create the threads and assign each one their share
 			for (int i = 0 ;i<countOfThreads;i++)
 			{
 				if(i == 0)
 				{
 					int threadId=i;
-					Thread indexer=new Index(threadId,key, linksList,0, shareFirstThread);
+					Index indexer=new Index(threadId,key, linksList,0, shareFirstThread);
 					threadShareEnd=shareFirstThread;
 					indexer.setName("Thread "+ i);
 					indexerThreads.add(indexer);
 					indexer.start();
+					System.out.print("****first if\n");
+					System.out.println(indexer.start + " " + indexer.end + " " + indexer.threadId);
+					System.out.print("\n****end of thread");
 				}
 				else
 				{
 					int threadId=i;
-					Thread indexer=new Index(threadId,key, linksList,threadShareEnd,threadShareEnd+shareRestOfThreads);
+					Index indexer2=new Index(threadId,key, linksList,threadShareEnd,threadShareEnd+shareRestOfThreads);
 					threadShareEnd=threadShareEnd+shareRestOfThreads;
-					indexer.setName("Thread "+ i);
-					indexerThreads.add(indexer);
-					indexer.start();
+					indexer2.setName("Thread "+ i);
+					indexerThreads.add(indexer2);
+					indexer2.start();
+					System.out.print("\n****second if\n");
+					System.out.println(indexer2.start + " " + indexer2.end + " " + indexer2.threadId);
+					System.out.print("\n****end of thread\n");
 				}
-			}	
-			linksList = IndexerDbConnection.returnUnIndexedUrls();
+			}
 			
 			for(int i = 0; i<indexerThreads.size();i++)
 			{
 				indexerThreads.get(i).join();
 			}
-			
-			
-			
+				
+			System.out.println("Khalasna");
 		}
 }

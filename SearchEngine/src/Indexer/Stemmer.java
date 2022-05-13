@@ -295,7 +295,7 @@ public class Stemmer {
 				word=stringBeforeING;
 				secondThird=true;
 			}
-			System.out.println("step1b"+word);
+			//System.out.println("step1b"+word);
 		}
 		
 		
@@ -647,7 +647,7 @@ public class Stemmer {
 		String a = "MULTIDIMENSIONAL";
 		a=a.toLowerCase();
 		Stemmer s = new Stemmer();
-		System.out.println(s.StemWord(a));
+		//System.out.println(s.StemWord(a));
 		return;
 	}
 	
