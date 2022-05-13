@@ -19,6 +19,10 @@ public class Indexer {
 	public ArrayList<Thread> indexerThreads;
 	public Integer key = 0; 
 	public ArrayList<String> linksList;
+	public int share;
+	public int shareRestOfThreads;
+	public int shareFirstThread;
+
 	public Indexer() throws InterruptedException, SQLException 
 	{
 		getStopWords("stopwords.txt", stopwords);
@@ -44,7 +48,6 @@ public class Indexer {
 		}
 		
 		linksList = IndexerDbConnection.returnUnIndexedUrls();
-		int share;
 		if(linksList.size() % countOfThreads == 0)
 		{
 			share = linksList.size()/countOfThreads;
@@ -52,14 +55,9 @@ public class Indexer {
 		}
 		else
 		{
-			
-		}
-		
-		
-		for(int i =0;i<linksList.size();i++)
-		{
-			
-		}
+			shareRestOfThreads=(linksList.size()/countOfThreads)*(countOfThreads-1); //share for each of the threads other than first thread.
+			shareFirstThread=linksList.size()-shareRestOfThreads; //share of first thread
+		}		
 		
 	}
 	
