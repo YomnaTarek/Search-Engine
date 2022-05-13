@@ -28,11 +28,7 @@ public class IndexerDbConnection {
 		 		//System.out.println(conn);
 		 		//Executing SQL query and fetching the result
 		 		statement = conn.createStatement();
-		 		String sqlStr = "select * from Link";
-		 		ResultSet rs = statement.executeQuery(sqlStr);
-		 		while (rs.next()) {
-		 			System.out.println(rs.getString(2));
-		 		}		
+		 		
 		 	}
 		     catch (Exception e) {
 		         System.out.print("Database Not Connected"+e);
@@ -143,7 +139,59 @@ public class IndexerDbConnection {
 			prepStatement.setString(2,word);
 			prepStatement.executeQuery();
 		}
+		
+		//Sets the number of threads entered by the user in the crawler process to be used in the indexer process
+		static public void setNumberOfThreads(int id, int num)
+		{
+			DatabaseConnect();
+			PreparedStatement prepStatement = null;
+			try {
+				prepStatement = conn.prepareStatement("INSERT INTO CountThreads(id, numOfThreads) VALUES (0,?)", Statement.RETURN_GENERATED_KEYS );
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+            try {
+				prepStatement.setString(1,Integer.toString(num));
+				prepStatement.executeQuery();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+            
+		}
+		
+		//deleting the number of threads entry.
+        static public void deleteNumThreads() throws SQLException {
+        	DatabaseConnect();
+            PreparedStatement prepStatement= conn.prepareStatement( "DELETE FROM CountThreads WHERE id=0", Statement.RETURN_GENERATED_KEYS );
+            prepStatement.executeQuery();
+        }
 
+        //getting the number of threads.
+        static public int getNumThreads() throws SQLException {
+        	DatabaseConnect();
+            int numThreads=0;
+            PreparedStatement prepStatement= conn.prepareStatement( "SELECT numOfThreads FROM CountThreads WHERE id=0", Statement.RETURN_GENERATED_KEYS );
+            ResultSet result= prepStatement.executeQuery();
+            if (result.next()) 
+            {
+                numThreads= result.getInt(1);
+            }
+            return numThreads;
+        }
+
+      //returns unindexed urls 
+        static public ArrayList<String> returnUnIndexedUrls() throws SQLException {
+        ArrayList<String> unindexed = null;
+        PreparedStatement prepStatement= conn.prepareStatement("SELECT url FROM Link WHERE endIndexing =0 and beginIndexing=0 limit 1", Statement.RETURN_GENERATED_KEYS);
+        ResultSet result = prepStatement.executeQuery();
+        while(result.next())
+        {
+            unindexed.add(result.getString(1));
+        }
+        return unindexed;
+    }
 	    public static void main(String args[]) throws Exception {
 			
 			IndexerDbConnection id = new IndexerDbConnection();

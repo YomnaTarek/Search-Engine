@@ -19,8 +19,10 @@ public class DBManager {
 		static public void DatabaseConnect(){
 		
 			//static string that contains DB info so we can connect
-			String url = "jdbc:sqlserver://WINDOWS-52CFOSV\\SQLEXPRESS;databaseName=SearchEngine;integratedSecurity=true;encrypt=true;trustServerCertificate=true;";
-		     try {
+			//String url = "jdbc:sqlserver://WINDOWS-52CFOSV\\SQLEXPRESS;databaseName=SearchEngine;integratedSecurity=true;encrypt=true;trustServerCertificate=true;";
+		    String url = "jdbc:sqlserver://DESKTOP-4T81S99;databaseName=SearchEngine;integratedSecurity=true;encrypt=true;trustServerCertificate=true;";
+		     
+			try {
 		    	//Loading the required JDBC Driver class
 		 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");	
 		 		

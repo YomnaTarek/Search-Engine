@@ -12,6 +12,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import DBManager.IndexerDbConnection;
+
 
 public class WebCrawler {
 //Number of Crawled pages is 5000 pages
@@ -23,6 +25,7 @@ int numberOfThreads=5;
 //appropriate data structure to determine the order of page visits is a queue
 static List<URL> LinksQueue;
 
+static int id = 0;
   //function to read number of threads from user
 public static int readNumberOfThreads()
 {
@@ -31,6 +34,7 @@ public static int readNumberOfThreads()
     try {
         String temp = consoleReader.readLine();
        numberOfThreads=Integer.parseInt(temp);
+       IndexerDbConnection.setNumberOfThreads(id, numberOfThreads);
 
     } catch (IOException e) {
         
@@ -45,7 +49,7 @@ public static List<URL>  readingSeed()
     try {
        
        //should be dynamic-> this is temporary
-        File myObj = new File("seedList.txt");
+        File myObj = new File("C:\\Users\\saiko\\OneDrive\\Desktop\\Search-Engine\\SearchEngine\\seedList.txt");
         Scanner fileReader = new Scanner(myObj);
         while (fileReader.hasNextLine()) {
             String data = fileReader.nextLine();

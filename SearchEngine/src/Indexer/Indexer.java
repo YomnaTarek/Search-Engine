@@ -15,10 +15,52 @@ public class Indexer {
 	
 	public static ArrayList<String> degrees;
 	public static ArrayList<String> stopwords;
-	
-	public Indexer() 
+	public static int countOfThreads;
+	public ArrayList<Thread> indexerThreads;
+	public Integer key = 0; 
+	public ArrayList<String> linksList;
+	public Indexer() throws InterruptedException, SQLException 
 	{
 		getStopWords("stopwords.txt", stopwords);
+		try {
+			countOfThreads = IndexerDbConnection.getNumThreads();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		for (int i = 0 ;i<countOfThreads;i++)
+		{
+			int threadId=i;
+			Thread indexer=new Index(threadId,key);
+			indexer.setName("Thread "+ i);
+			indexerThreads.add(indexer);
+			indexer.start();
+		}
+		
+		for(int i = 0; i<indexerThreads.size();i++)
+		{
+			indexerThreads.get(i).join();
+		}
+		
+		linksList = IndexerDbConnection.returnUnIndexedUrls();
+		int share;
+		if(linksList.size() % countOfThreads == 0)
+		{
+			share = linksList.size()/countOfThreads;
+			//logic el ta2seema
+		}
+		else
+		{
+			
+		}
+		
+		
+		for(int i =0;i<linksList.size();i++)
+		{
+			
+		}
+		
 	}
 	
 	//This function fetches the list of stopwords from the stopword.txt
