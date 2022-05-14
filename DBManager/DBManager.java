@@ -50,6 +50,49 @@ public class DBManager {
 				}
 			  return 0;
 		  }
+
+		  
+		public static List<URL> getAllURLs() throws SQLException , MalformedURLException
+		{
+			System.out.print("getAllURls() called"+"\n" );
+            ArrayList<URL> urls=new ArrayList<>();
+			ArrayList<String>u=new ArrayList<>();
+			String sqlStr = "select * from Link";
+			DatabaseConnect();
+			ResultSet rs = st.executeQuery(sqlStr);
+			
+			while(rs.next()) {
+				u.add( rs.getString("url"));	
+			}
+			
+			for(int j=0; j< u.size(); j++)
+			{
+				urls.add(new URL(u.get(j)));
+			}
+			return urls;
+		}
+		
+		public static List<URL> getInbounds(String url) throws SQLException , MalformedURLException
+		{
+			System.out.print("getInbounds() called"+"\n" );
+            ArrayList<URL> urls=new ArrayList<>();
+			ArrayList<String>u=new ArrayList<>();
+			String sqlStr = "select * from DiscoveredLinks where associatedUrl ='"+url+"'";
+			DatabaseConnect();
+			ResultSet rs = st.executeQuery(sqlStr);
+			
+			while(rs.next()) {
+				u.add( rs.getString("url"));	
+			}
+			
+			for(int j=0; j< u.size(); j++)
+			{
+				urls.add(new URL(u.get(j)));
+			}
+			return urls;
+		}
+		
+
 		  public static boolean isExistentURL(String url) throws SQLException
 		  {
 			System.out.print("isExistentURL() called"+"\n" );
@@ -67,15 +110,230 @@ public class DBManager {
 	     }
 	     return false;
 		  }
+		  public static int getCountOutbounds(String url) throws SQLException
+		  {
+			System.out.print("getCountOutbounds() called"+"\n" );
+		
+			String sqlStr = "select outbound from Link where url='"+url+"'";
+			DatabaseConnect();
+			ResultSet rs = st.executeQuery(sqlStr);
+			  int count=0;
+			  if ( rs.next())
+			   {
+					 count = rs.getInt(1);
+					 return count;
+				}
+			  return 0;
+		  }
+
+		  public static int getCountWordsForURL(String url) throws SQLException
+		  {
+			System.out.print("getCountOutbounds() called"+"\n" );
+		
+			String sqlStr = "select countWords from Link where url='"+url+"'";
+			DatabaseConnect();
+			ResultSet rs = st.executeQuery(sqlStr);
+			  int count=0;
+			  if ( rs.next())
+			   {
+					 count = rs.getInt(1);
+					 return count;
+				}
+			  return 0;
+		  }
+
+		  //getting the number of hits in our urls for a specific
+		  public static int getCountURLsForWord(String word) throws SQLException
+		  {
+			System.out.print("getCountOutbounds() called"+"\n" );
+		
+			String sqlStr = "select count(*) from IndexingWords where word='"+word+"'";
+			DatabaseConnect();
+			ResultSet rs = st.executeQuery(sqlStr);
+			  int count=0;
+			  if ( rs.next())
+			   {
+					 count = rs.getInt(1);
+					 return count;
+				}
+			  return 0;
+		  }
+
+		  public static int getCountTitle(String word,String url) throws SQLException
+		  {
+			System.out.print("getCountTitle() called"+"\n" );
+		
+			String sqlStr = "select title from IndexingWords where word='"+word+"'and url='"+url+"'";
+			DatabaseConnect();
+			ResultSet rs = st.executeQuery(sqlStr);
+			  int count=0;
+			  if ( rs.next())
+			   {
+					 count = rs.getInt(1);
+					 return count;
+				}
+			  return 0;
+		  }
+		  public static int getCountH1(String word,String url) throws SQLException
+		  {
+			System.out.print("getCountTitle() called"+"\n" );
+		
+			String sqlStr = "select h1 from IndexingWords where word='"+word+"'and url='"+url+"'";
+			DatabaseConnect();
+			ResultSet rs = st.executeQuery(sqlStr);
+			  int count=0;
+			  if ( rs.next())
+			   {
+					 count = rs.getInt(1);
+					 return count;
+				}
+			  return 0;
+		  }
+		  public static int getCountH2(String word,String url) throws SQLException
+		  {
+			System.out.print("getCountTitle() called"+"\n" );
+		
+			String sqlStr = "select h2 from IndexingWords where word='"+word+"'and url='"+url+"'";
+			DatabaseConnect();
+			ResultSet rs = st.executeQuery(sqlStr);
+			  int count=0;
+			  if ( rs.next())
+			   {
+					 count = rs.getInt(1);
+					 return count;
+				}
+			  return 0;
+		  }
+		  public static int getCountH3(String word,String url) throws SQLException
+		  {
+			System.out.print("getCountTitle() called"+"\n" );
+		
+			String sqlStr = "select h3 from IndexingWords where word='"+word+"'and url='"+url+"'";
+			DatabaseConnect();
+			ResultSet rs = st.executeQuery(sqlStr);
+			  int count=0;
+			  if ( rs.next())
+			   {
+					 count = rs.getInt(1);
+					 return count;
+				}
+			  return 0;
+		  }
+		  public static int getCountH4(String word,String url) throws SQLException
+		  {
+			System.out.print("getCountTitle() called"+"\n" );
+		
+			String sqlStr = "select h4 from IndexingWords where word='"+word+"'and url='"+url+"'";
+			DatabaseConnect();
+			ResultSet rs = st.executeQuery(sqlStr);
+			  int count=0;
+			  if ( rs.next())
+			   {
+					 count = rs.getInt(1);
+					 return count;
+				}
+			  return 0;
+		  }
+		  public static int getCountH5(String word,String url) throws SQLException
+		  {
+			System.out.print("getCountTitle() called"+"\n" );
+		
+			String sqlStr = "select h5 from IndexingWords where word='"+word+"'and url='"+url+"'";
+			DatabaseConnect();
+			ResultSet rs = st.executeQuery(sqlStr);
+			  int count=0;
+			  if ( rs.next())
+			   {
+					 count = rs.getInt(1);
+					 return count;
+				}
+			  return 0;
+		  }
+		  public static int getCountH6(String word,String url) throws SQLException
+		  {
+			System.out.print("getCountTitle() called"+"\n" );
+		
+			String sqlStr = "select h6 from IndexingWords where word='"+word+"'and url='"+url+"'";
+			DatabaseConnect();
+			ResultSet rs = st.executeQuery(sqlStr);
+			  int count=0;
+			  if ( rs.next())
+			   {
+					 count = rs.getInt(1);
+					 return count;
+				}
+			  return 0;
+		  }
+		  public static int getCountP(String word,String url) throws SQLException
+		  {
+			System.out.print("getCountTitle() called"+"\n" );
+		
+			String sqlStr = "select p from IndexingWords where word='"+word+"'and url='"+url+"'";
+			DatabaseConnect();
+			ResultSet rs = st.executeQuery(sqlStr);
+			  int count=0;
+			  if ( rs.next())
+			   {
+					 count = rs.getInt(1);
+					 return count;
+				}
+			  return 0;
+		  }
+		  public static int getCountBold(String word,String url) throws SQLException
+		  {
+			System.out.print("getCountTitle() called"+"\n" );
+		
+			String sqlStr = "select bold from IndexingWords where word='"+word+"'and url='"+url+"'";
+			DatabaseConnect();
+			ResultSet rs = st.executeQuery(sqlStr);
+			  int count=0;
+			  if ( rs.next())
+			   {
+					 count = rs.getInt(1);
+					 return count;
+				}
+			  return 0;
+		  }
+		  public static int getCountItalic(String word,String url) throws SQLException
+		  {
+			System.out.print("getCountTitle() called"+"\n" );
+		
+			String sqlStr = "select italic from IndexingWords where word='"+word+"'and url='"+url+"'";
+			DatabaseConnect();
+			ResultSet rs = st.executeQuery(sqlStr);
+			  int count=0;
+			  if ( rs.next())
+			   {
+					 count = rs.getInt(1);
+					 return count;
+				}
+			  return 0;
+		  }
+
+
 
 		  public static void addURL(String url, int index) throws SQLException
 		  {
 			System.out.print(" addURL() called"+"\n" );
 			  index++;
-            String sqlStr = "INSERT INTO Link VALUES ('"+index+"','"+url+"',1,0,0,0,0,0,0)";
+            String sqlStr = "INSERT INTO Link VALUES ('"+index+"','"+url+"',1,0,0,0,0,0,0,0)";
 			DatabaseConnect();
 			st.executeUpdate(sqlStr);
 
+		  }
+		  public static void updateRank(String url, double rank) throws SQLException {
+			System.out.print("updateRank() called"+"\n" );
+			String sqlStr="UPDATE Link set rank += popularity+ '"+rank+"' WHERE url='"+url+"'";
+			DatabaseConnect();
+			st.executeUpdate(sqlStr);
+			  
+		  }
+		  public static void updatePopularity(String url, double rank) throws SQLException {
+			System.out.print("updatePopularity() called"+"\n" );
+			String sqlStr="UPDATE Link set popularity='"+rank+"'WHERE url='"+url+"'";
+			DatabaseConnect();
+			st.executeUpdate(sqlStr);
+			  
 		  }
 		  public static void incrementInBound(String url) throws SQLException {
 			System.out.print("incrementInbound() called"+"\n" );
