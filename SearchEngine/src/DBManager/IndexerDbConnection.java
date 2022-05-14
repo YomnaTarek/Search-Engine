@@ -244,6 +244,14 @@ public class IndexerDbConnection {
             prepStatement.executeQuery();
         }
         
+      //Updating the words count attribute in Link table.
+        static public void updateWordCount (String link,Integer count) throws SQLException {
+        	PreparedStatement prepStatement= conn.prepareStatement("UPDATE Link set countWords =? WHERE url=?", Statement.RETURN_GENERATED_KEYS);
+            prepStatement.setString(1,count.toString());
+            prepStatement.setString(2,link);
+            prepStatement.executeUpdate();
+
+        }
 	    public static void main(String args[]) throws Exception {
 			
 			IndexerDbConnection id = new IndexerDbConnection();

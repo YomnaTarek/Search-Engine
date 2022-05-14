@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import org.jsoup.Jsoup;
@@ -15,7 +16,7 @@ import DBManager.IndexerDbConnection;
 
 public class Indexer {
 	
-	public static ArrayList<String> degrees = new ArrayList<String>();
+	//public static ArrayList<String> degrees = new ArrayList<String>();
 	public static ArrayList<String> stopwords = new ArrayList<String>();
 	public static int countOfThreads;
 	public static ArrayList<Thread> indexerThreads = new ArrayList<Thread>();
@@ -23,7 +24,7 @@ public class Indexer {
 	public static ArrayList<String> linksList = new ArrayList<String>();
 	public static int shareRestOfThreads;
 	public static int shareFirstThread;
-
+	public static ArrayList<String> degrees = new ArrayList<String>(Arrays.asList("h1","h2","h3","h4","h5","h6","i", "b", "p"));
 	public Indexer() throws InterruptedException, SQLException 
 	{  
 		getStopWords("stopwords.txt", stopwords);
@@ -71,7 +72,6 @@ public class Indexer {
 			 this.documents = docs;
 			 this.start = start;
 			 this.end = end;
-			 
 		 }
 		 
 		 public void run()
@@ -80,7 +80,7 @@ public class Indexer {
 			String link = null;
 			for(int k = start ;k<end;k++)
 			{
-					
+					Integer countWords = 0;
 					System.out.println("Thread no. "+this.threadId+" parsing url" + this.documents.get(k));
 					link = documents.get(k);
 					//If link == null then we break the outer most while loop
@@ -115,14 +115,29 @@ public class Indexer {
 			{
 				ArrayList<String> stemmedWords = new ArrayList<String>();
 				Elements htmlDoc = document.select("h1, h2, h3, h4, h5, h6, p, title, i, b"); //Here we divide the document according to the tags/degrees
-				IndexerDbConnection.getWordDegrees(degrees);//This query gets us a list of possible degrees/tags (h1,h2,h3,..)
 				//We then loop on each degree and call parseText function which gets all the text content for a certain degree, splits the text into words,
 				//then stems each word,adds it to the stemmedWords array list, then adds it to the database (if not inserted before) or increments its count in the corresponding
 				//degree column (if inserted before in db)
+				System.out.println("^^^^^^^^^^^" + degrees.size());
 				for(int i = 0 ;i<degrees.size();i++)
 				{
+					ArrayList<String> wordsOfTag = new ArrayList<String>();
+					String [] text = null;
+					text = htmlDoc.select(degrees.get(i)).text().split("\\s+");
+					if(text[0] == "" && text.length == 1)
+					{
+						System.out.println("ana lista fadya");
+					}
+					else
+					{
+						int num = htmlDoc.select(degrees.get(i)).text().split("\\s+").length;	
+						countWords = countWords + num;
+					}
+
+					
 					try {
 						parseText(link,htmlDoc, degrees.get(i),stemmedWords,stopwords);
+						
 					} catch (SQLException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -132,6 +147,15 @@ public class Indexer {
 			//Set end indexing of this url to 1 to mark it as fully parsed
 			try {
 				IndexerDbConnection.EndIndexing(link);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			//System.out.println(countWords);
+			
+			try {
+				
+				IndexerDbConnection.updateWordCount(link, countWords);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -150,7 +174,7 @@ public class Indexer {
 		        return true;
 		    }
 			 
-			public static void parseText(String link, Elements textDoc, String degree, ArrayList<String> stemmedWords,ArrayList<String> stopwords ) throws SQLException
+			public static void parseText(String link, Elements textDoc, String degree, ArrayList<String> stemmedWords,ArrayList<String> stopwords) throws SQLException
 			 {
 				 Elements selectedWords = textDoc.select(degree); //We select from the document the text based on whether the degree passed is h1, h2, h3, ..
 				 String extractedText =  selectedWords.text(); //We extract the text content
