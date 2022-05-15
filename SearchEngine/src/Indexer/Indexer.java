@@ -15,6 +15,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
 import DBManager.IndexerDbConnection;
+import Ranker.Ranker;
 
 public class Indexer {
 	
@@ -343,7 +344,7 @@ public class Indexer {
 			{
 				indexerThreads.get(i).join();
 			}
-				
+			Ranker.pageRanker();
 			System.out.println("Khalasna");
 		}
 }

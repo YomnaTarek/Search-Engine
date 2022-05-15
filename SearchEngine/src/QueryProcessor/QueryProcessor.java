@@ -1,3 +1,4 @@
+package QueryProcessor;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -17,6 +18,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
 import Indexer.Stemmer;
+import Ranker.Ranker;
 
 import java.util.Scanner;
 
@@ -106,9 +108,7 @@ public static void main(String[] args) throws IOException, SQLException {
     ArrayList<String> stopWordsList=fetchStopWords();      //fetching the stop words.
     ArrayList<String> processedWords=preProcessing (query,stopWordsList); //preprocessing the search query.
     System.out.println(processedWords);
-
-
-
+    Ranker.pageRelevance(processedWords);
     scan.close();
 
 }

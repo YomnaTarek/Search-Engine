@@ -32,6 +32,7 @@ public static int readNumberOfThreads()
     BufferedReader consoleReader = new BufferedReader(new InputStreamReader(System.in)); 
     int numberOfThreads=0;
     try {
+        System.out.print("Please enter number of threads:"+"\n" );	
         String temp = consoleReader.readLine();
        numberOfThreads=Integer.parseInt(temp);
        IndexerDbConnection.setNumberOfThreads(id, numberOfThreads);
@@ -49,8 +50,9 @@ public static List<URL>  readingSeed()
     try {
        
        //should be dynamic-> this is temporary
-        File myObj = new File("C:\\Users\\saiko\\OneDrive\\Desktop\\Search-Engine\\SearchEngine\\seedList.txt");
-        Scanner fileReader = new Scanner(myObj);
+        //File myObj = new File("C:\\Users\\habib\\Desktop\\Senior1-Sem2\\APT\\Project APT\\Search-Engine\\seedList.txt");
+    	 File myObj = new File("C:\\Users\\saiko\\OneDrive\\Desktop\\Search-Engine\\SearchEngine\\seedList.txt");
+    	Scanner fileReader = new Scanner(myObj);
         while (fileReader.hasNextLine()) {
             String data = fileReader.nextLine();
             try {
