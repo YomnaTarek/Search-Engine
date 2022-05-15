@@ -1,7 +1,9 @@
 package Indexer;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -16,7 +18,6 @@ import DBManager.IndexerDbConnection;
 
 public class Indexer {
 	
-	//public static ArrayList<String> degrees = new ArrayList<String>();
 	public static ArrayList<String> stopwords = new ArrayList<String>();
 	public static int countOfThreads;
 	public static ArrayList<Thread> indexerThreads = new ArrayList<Thread>();
@@ -124,16 +125,11 @@ public class Indexer {
 					ArrayList<String> wordsOfTag = new ArrayList<String>();
 					String [] text = null;
 					text = htmlDoc.select(degrees.get(i)).text().split("\\s+");
-					if(text[0] == "" && text.length == 1)
-					{
-						System.out.println("ana lista fadya");
-					}
-					else
+					if(text[0] != "" && text.length != 1)
 					{
 						int num = htmlDoc.select(degrees.get(i)).text().split("\\s+").length;	
 						countWords = countWords + num;
 					}
-
 					
 					try {
 						parseText(link,htmlDoc, degrees.get(i),stemmedWords,stopwords);
@@ -280,6 +276,21 @@ public class Indexer {
 			 }
 
 	 public static void main(String args[]) throws Exception {
+		
+	    	 System.out.println("Do you want to: 1.index 2.reset indexing");
+	    	 BufferedReader consoleReader =  new BufferedReader(new InputStreamReader(System.in)); 
+	    	 String choice = consoleReader.readLine(); 
+	        
+	        //Re-indexing logic
+	        if(Integer.parseInt(choice)==2) {
+	        	IndexerDbConnection.deleteIndexingWordsTable(); //delete all entries in the indexing words table
+	        	IndexerDbConnection.zeroingEndAndBegin(); //reset the beginIndexing and endIndexing of all links
+	    		//TODO: delete rank results
+	        	
+	        }
+	        else{	
+	        	IndexerDbConnection.ResetAlreadyStarted();//Start indexing from the last link that has not yet been indexed
+	        }
 			Indexer indexerMain = new Indexer();
 			System.out.println("*******************INDEXER***************************");
 			System.out.println("stopwords " + stopwords);
