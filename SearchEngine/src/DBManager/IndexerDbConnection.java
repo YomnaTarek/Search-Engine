@@ -37,9 +37,10 @@ public class IndexerDbConnection {
 
 
 	    //Reset beginIndexing to 0 for all the words that their urls have started indexing but are not finished yet(endIndexing=0). 
-	    static public void ResetAlreadyStarted(Integer numThreads) throws SQLException {  //nondone
-			String foundLinks="";
-			PreparedStatement prepStatement= conn.prepareStatement("SELECT url FROM Link WHERE beginIndexing =1 and endIndexing=0 limit "+numThreads.toString(), Statement.RETURN_GENERATED_KEYS);
+	    static public void ResetAlreadyStarted() throws SQLException {  //nondone
+			DatabaseConnect();
+	    	String foundLinks="";
+			PreparedStatement prepStatement= conn.prepareStatement("SELECT url FROM Link WHERE beginIndexing =1 and endIndexing=0 ", Statement.RETURN_GENERATED_KEYS);
 			ResultSet result=prepStatement.executeQuery();
 			if(result.next())
 			{
@@ -80,12 +81,14 @@ public class IndexerDbConnection {
 
 		//Reseting the values of the attributes endIndexing and beginIndexing in the Link table for all the urls.
 		static public void zeroingEndAndBegin() throws SQLException {
+			DatabaseConnect();
 			PreparedStatement prepStatement= conn.prepareStatement( "UPDATE Link set endIndexing=0,beginIndexing=0", Statement.RETURN_GENERATED_KEYS );
 			prepStatement.executeUpdate();
 		}
 
 		//Dropping the IndexingWords Table.
 		static public void deleteIndexingWordsTable() throws SQLException {
+			DatabaseConnect();
 			PreparedStatement prepStatement= conn.prepareStatement("DELETE FROM IndexingWords", Statement.RETURN_GENERATED_KEYS );
 			prepStatement.executeQuery();
 			
