@@ -91,11 +91,11 @@ public class Ranker {
         int h5Count=DBManager.getCountH5(queryWord, url.toString());
         int h6Count=DBManager.getCountH6(queryWord, url.toString());
         int boldCount=DBManager.getCountBold(queryWord, url.toString());
-        int intalicCount=DBManager.getCountItalic(queryWord, url.toString());
+        int italicCount=DBManager.getCountItalic(queryWord, url.toString());
         int pCount= DBManager.getCountP(queryWord, url.toString());
-
-        double wordFrequency=0.3*titleCount+0.15*h1Count+0.1*(h2Count+h3Count)+0.04*(h4Count+h5Count+h6Count)+0.1*(intalicCount+boldCount)+0.03*pCount;
-
+        System.out.println(titleCount +" "+h1Count+" "+h2Count+" "+h3Count+" "+h4Count+" "+h5Count+" "+boldCount+" "+italicCount+" ");
+        double wordFrequency=0.3*titleCount+0.15*h1Count+0.1*(h2Count+h3Count)+0.04*(h4Count+h5Count+h6Count)+0.1*(italicCount+boldCount)+0.03*pCount;
+        System.out.println(wordFrequency);
         return (double)((double)wordFrequency/(double)totalWords);
     }
 	// relavance algorithm tf-idf to calculate relevance
@@ -110,6 +110,8 @@ public class Ranker {
                 {
                     double tf=calculatingTF(link, word);
                     double rank=idf*tf;
+                    System.out.println(rank +" "+idf+" "+tf);
+                    System.out.println(link.toString()+"\n");
                     DBManager.updateRank(link.toString(), rank);//addition(tf-idf of all query words) is done inside the database
                 }
         }
