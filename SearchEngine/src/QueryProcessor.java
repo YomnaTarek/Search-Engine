@@ -94,7 +94,7 @@ public static ArrayList<String> preProcessing (String query, ArrayList<String> s
                     }
             }
     }
-    return arrayOfWords;
+    return stemmedWords;
 }
 
 public static void main(String[] args) throws IOException, SQLException {
@@ -105,7 +105,7 @@ public static void main(String[] args) throws IOException, SQLException {
     String query = scan.nextLine();
     ArrayList<String> stopWordsList=fetchStopWords();      //fetching the stop words.
     ArrayList<String> processedWords=preProcessing (query,stopWordsList); //preprocessing the search query.
-
+    System.out.println(processedWords);
 
 
 
