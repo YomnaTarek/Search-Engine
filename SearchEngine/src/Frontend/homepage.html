@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Search Engine under construction</title>
+        <link rel="stylesheet" href="/css/title.css">
+    </head>
+    <body background="blue.jpg">
+        <section>
+            <div class="main">
+                <img src="clipart1855837.png" class="logo">
+                <h1 class='stripe-text'>Dawar-Lee</h1>
+                <div class="searchBox">
+                    <input type="text" name="" class="query" value="">
+                    <div class="icons">
+                        <div><img src="https://img.icons8.com/dusk/35/000000/google-web-search.png"></div>
+                        <div><img src=""></div>
+                    </div>
+                </div>
+                <div class="button">
+                    <button class="searchBtn">
+                            Search
+                    </button>
+                </div>
+            </div>
+        </section>
+        <script>
+            let query = document.querySelector('.query');
+            let searchBtn = document.querySelector('.searchBtn');
+            searchBtn.onclick  = function(){
+                let url = 'https://www.google.com/search?q='+ query.value;
+                window.open(url, '_self');
+            }
+        </script>
+    </body>
+</html>
