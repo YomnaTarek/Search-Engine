@@ -10,7 +10,7 @@ import DBManager.DBManager;
 public class Crawl implements Runnable {
 
     //Number of Crawled pages is 5000 pages
-    public static int threshold=150;
+    public static int threshold=40;
 
     //appropriate data structure to determine the order of page visits is a queue
     ArrayList <URL> LinksQueue=new ArrayList<>();
@@ -108,6 +108,9 @@ public class Crawl implements Runnable {
           //deleting the thread entry from the thread table as it finished parsing that id
               
                 try {
+                    System.out.println(
+                        "thread"+threadName+" terminating"
+                    );
                     DBManager.deleteThreadURL(Integer.parseInt(threadName));
                 } catch (NumberFormatException | SQLException e) {
                     e.printStackTrace();

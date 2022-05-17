@@ -101,6 +101,7 @@ public class Ranker {
 	// relavance algorithm tf-idf to calculate relevance
     public static void pageRelevance(ArrayList<String> query) throws MalformedURLException, SQLException
     {
+        DBManager.resetRank();
         //getting IDF
         List<URL> links = DBManager.getAllURLs();//to get revelance to all links
         for(String word :query)
