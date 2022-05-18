@@ -323,7 +323,21 @@ public class DBManager {
 		  }
 		  public static void updateRank(String url, double rank) throws SQLException {
 			System.out.print("updateRank() called"+"\n" );
-			String sqlStr="UPDATE Link set rank+=popularity+'"+rank+"' WHERE url='"+url+"'";
+			String sqlStr="UPDATE Link set rank+='"+rank+"' WHERE url='"+url+"'";
+			DatabaseConnect();
+			st.executeUpdate(sqlStr);
+			  
+		  }
+		  public static void addPopularity() throws SQLException {
+			System.out.print("addPopularity() called"+"\n" );
+			String sqlStr="UPDATE Link set rank= popularity";
+			DatabaseConnect();
+			st.executeUpdate(sqlStr);
+			  
+		  }
+		  public static void addPopularityForURL(String url) throws SQLException {
+			System.out.print("addPopularity() called"+"\n" );
+			String sqlStr="UPDATE Link set rank= popularity  WHERE url='"+url+"'";
 			DatabaseConnect();
 			st.executeUpdate(sqlStr);
 			  
