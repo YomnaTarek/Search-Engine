@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\saiko\OneDrive\Desktop\Search-Engine\springboot-first-app"/>
 			<item value="C:\Users\saiko\OneDrive\Desktop\springboot-first-app"/>
 		</list>
 		<list key="projectNameTemplate">
