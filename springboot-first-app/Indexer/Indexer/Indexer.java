@@ -92,6 +92,27 @@ public class Indexer {
 					}
 					else 
 					{
+						//Check if the link is instagram or facebook or google,if yes,then indexing is not possible.
+						String tempLink=link.toLowerCase();
+						if(tempLink.contains("facebook") || tempLink.contains("google") || tempLink.contains("instagram") )
+						{
+							System.out.println("link: "+link+" is not indexable");
+							//set begin and end indexing to 1.
+			                                try {
+				                             IndexerDbConnection.BeginIndexing(link.toString());
+			                                     } catch (SQLException e) {
+				                       // TODO Auto-generated catch block
+				                        e.printStackTrace();
+			                                }							
+			                                try {
+				                             IndexerDbConnection.EndIndexing(link);
+			                                     } catch (SQLException e) {
+				                       // TODO Auto-generated catch block
+				                        e.printStackTrace();
+			                                }
+							
+							continue;
+						}
 						try 
 						{
 							//If the link is not null then we start the indexing process for this link
