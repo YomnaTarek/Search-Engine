@@ -1,0 +1,65 @@
+// ACTION: Define the package to be accessed. This must match the parent folder name.
+package packageMyServlet;
+ 
+// ACTION: Define import libraries.
+import java.io.*;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
+//import jakarta.servlet.ServletException;
+
+// ACTION: Define class whose name matches that of the java file (callMyServlet.java). This class should extend the Java parent class HttpServlet.
+// NOTE: HttpServlet is an abstract class that may be extended to create an HTTP servlet suitable for a web site. The sub-class (e.g. callMyServlet) must override 
+// at least one method, otherwise it provides no viable response:
+// - doGet, if the servlet supports HTTP GET requests
+// - doPost, for HTTP POST requests
+// - doPut, for HTTP PUT requests
+// - doDelete, for HTTP DELETE requests
+// - init and destroy, to manage resources that are held for the life of the servlet
+// - getServletInfo, which the servlet uses to provide information about itself
+// SOURCE: https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServlet.html
+public class callMyServlet extends HttpServlet {
+   
+	// ACTION: Override the doGet method, which defines how our servlet will respond to GET-type HTTP requests.
+	@Override
+	public void doGet(HttpServletRequest requestServlet_In, HttpServletResponse responseServlet_Out) throws IOException, ServletException {
+      
+		try {
+			// ACTION: Define responseServlet_Out/MIME type. This type, specifically, allows us to respond with the HTML code required to generate a simple website.
+			responseServlet_Out.setContentType("text/html;charset=UTF-8");
+		
+			// ACTION: Allocate a output writer to write the responseServlet_Out message into the network socket.
+			PrintWriter writerForResponse = responseServlet_Out.getWriter();
+ 
+			// ACTION: Physically write the output. Note that, here, we are writing HTML code line-by-line to writerForResponse within our Java class.
+			// We must follow the same syntax rules as any HTML file.
+			try {
+			
+				// ACTION: Create an HTML document dynamically useing the writerForResponse as shown below.
+				writerForResponse.println("<!DOCTYPE html>");
+				writerForResponse.println("<html><head>");
+				writerForResponse.println("<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>");
+				writerForResponse.println("<title>Hello, World</title></head>");
+				writerForResponse.println("<body>");
+				writerForResponse.println("<h1>Hello world! You have successfully called myServlet!</h1>");  // says Hello
+         
+				// ACTION Echo client's requestServlet_In information
+				writerForResponse.println("<p>Request URI: " + requestServlet_In.getRequestURI() + "</p>");
+				writerForResponse.println("<p>Protocol: " + requestServlet_In.getProtocol() + "</p>");
+				writerForResponse.println("<p>PathInfo: " + requestServlet_In.getPathInfo() + "</p>");
+				writerForResponse.println("<p>Remote Address: " + requestServlet_In.getRemoteAddr() + "</p>");
+         
+				// ACTION" Generate a random number upon each requestServlet_In
+				writerForResponse.println("<p>A Random Number: <strong>" + Math.random() + "</strong></p>");
+				writerForResponse.println("</body>");
+				writerForResponse.println("</html>");
+		
+			} finally {
+				
+				// ACTION: Don't forget to close the PrintWriter.
+				writerForResponse.close();
+			}
+		} catch (Exception e100) {
+			// Do nothing...
+		}
+	}
+}

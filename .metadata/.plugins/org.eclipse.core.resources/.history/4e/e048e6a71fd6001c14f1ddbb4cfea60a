@@ -1,0 +1,600 @@
+29-Mar-2021 13:45:48.070 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.0.4
+29-Mar-2021 13:45:48.075 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 5 2021 11:07:15 UTC
+29-Mar-2021 13:45:48.076 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.0.4.0
+29-Mar-2021 13:45:48.076 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+29-Mar-2021 13:45:48.076 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+29-Mar-2021 13:45:48.076 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+29-Mar-2021 13:45:48.076 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Android\Android Studio\jre\jre
+29-Mar-2021 13:45:48.077 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_242-release-1644-b01
+29-Mar-2021 13:45:48.077 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            JetBrains s.r.o
+29-Mar-2021 13:45:48.077 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module004 Java Servlet\_Resources\Tomcat10
+29-Mar-2021 13:45:48.077 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module004 Java Servlet\_Resources\Tomcat10
+29-Mar-2021 13:45:48.082 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module004 Java Servlet\_Resources\Tomcat10\conf\logging.properties
+29-Mar-2021 13:45:48.083 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+29-Mar-2021 13:45:48.083 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+29-Mar-2021 13:45:48.083 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+29-Mar-2021 13:45:48.083 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+29-Mar-2021 13:45:48.083 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module004 Java Servlet\_Resources\Tomcat10
+29-Mar-2021 13:45:48.084 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module004 Java Servlet\_Resources\Tomcat10
+29-Mar-2021 13:45:48.084 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module004 Java Servlet\_Resources\Tomcat10\temp
+29-Mar-2021 13:45:48.089 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [C:\Program Files\Android\Android Studio\jre\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Python39\Scripts\;C:\Python39\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\MATLAB\R2020b\bin;C:\Program Files\Java\jdk-16\bin;C:\Users\deese\AppData\Local\Microsoft\WindowsApps;C:\Users\deese\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\deese\AppData\Roaming\npm;C:\Users\deese\AppData\Local\Android\Sdk\platform-tools;;.]
+29-Mar-2021 13:45:48.366 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 13:45:48.386 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [489] milliseconds
+29-Mar-2021 13:45:48.407 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+29-Mar-2021 13:45:48.407 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.0.4]
+29-Mar-2021 13:45:48.417 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module004 Java Servlet\_Resources\Tomcat10\webapps\docs]
+29-Mar-2021 13:45:48.749 WARNING [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [159] milliseconds.
+29-Mar-2021 13:45:48.777 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module004 Java Servlet\_Resources\Tomcat10\webapps\docs] has finished in [359] ms
+29-Mar-2021 13:45:48.777 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module004 Java Servlet\_Resources\Tomcat10\webapps\examples]
+29-Mar-2021 13:45:49.116 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module004 Java Servlet\_Resources\Tomcat10\webapps\examples] has finished in [339] ms
+29-Mar-2021 13:45:49.117 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module004 Java Servlet\_Resources\Tomcat10\webapps\host-manager]
+29-Mar-2021 13:45:49.151 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module004 Java Servlet\_Resources\Tomcat10\webapps\host-manager] has finished in [33] ms
+29-Mar-2021 13:45:49.151 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module004 Java Servlet\_Resources\Tomcat10\webapps\manager]
+29-Mar-2021 13:45:49.182 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module004 Java Servlet\_Resources\Tomcat10\webapps\manager] has finished in [31] ms
+29-Mar-2021 13:45:49.183 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module004 Java Servlet\_Resources\Tomcat10\webapps\ROOT]
+29-Mar-2021 13:45:49.208 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module004 Java Servlet\_Resources\Tomcat10\webapps\ROOT] has finished in [25] ms
+29-Mar-2021 13:45:49.212 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 13:45:49.230 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [844] milliseconds
+29-Mar-2021 14:43:15.505 SEVERE [main] org.apache.catalina.startup.Catalina.stopServer Could not contact [localhost:8005] (base port [8005] and offset [0]). Tomcat may not be running.
+29-Mar-2021 14:43:15.508 SEVERE [main] org.apache.catalina.startup.Catalina.stopServer Error stopping Catalina
+	java.net.ConnectException: Connection refused: connect
+		at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+		at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+		at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+		at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+		at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+		at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+		at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+		at java.net.Socket.connect(Socket.java:607)
+		at java.net.Socket.connect(Socket.java:556)
+		at java.net.Socket.<init>(Socket.java:452)
+		at java.net.Socket.<init>(Socket.java:229)
+		at org.apache.catalina.startup.Catalina.stopServer(Catalina.java:692)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at org.apache.catalina.startup.Bootstrap.stopServer(Bootstrap.java:388)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:478)
+29-Mar-2021 16:49:28.204 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.0.4
+29-Mar-2021 16:49:28.210 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 5 2021 11:07:15 UTC
+29-Mar-2021 16:49:28.210 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.0.4.0
+29-Mar-2021 16:49:28.210 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+29-Mar-2021 16:49:28.210 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+29-Mar-2021 16:49:28.210 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+29-Mar-2021 16:49:28.210 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Android\Android Studio\jre\jre
+29-Mar-2021 16:49:28.211 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_242-release-1644-b01
+29-Mar-2021 16:49:28.211 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            JetBrains s.r.o
+29-Mar-2021 16:49:28.211 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10
+29-Mar-2021 16:49:28.211 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10
+29-Mar-2021 16:49:28.215 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\conf\logging.properties
+29-Mar-2021 16:49:28.215 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+29-Mar-2021 16:49:28.216 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+29-Mar-2021 16:49:28.216 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+29-Mar-2021 16:49:28.216 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+29-Mar-2021 16:49:28.216 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10
+29-Mar-2021 16:49:28.217 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10
+29-Mar-2021 16:49:28.217 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\temp
+29-Mar-2021 16:49:28.221 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [C:\Program Files\Android\Android Studio\jre\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Python39\Scripts\;C:\Python39\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\MATLAB\R2020b\bin;C:\Program Files\Java\jdk-16\bin;C:\Users\deese\AppData\Local\Microsoft\WindowsApps;C:\Users\deese\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\deese\AppData\Roaming\npm;C:\Users\deese\AppData\Local\Android\Sdk\platform-tools;;.]
+29-Mar-2021 16:49:28.480 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 16:49:28.496 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [433] milliseconds
+29-Mar-2021 16:49:28.518 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+29-Mar-2021 16:49:28.518 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.0.4]
+29-Mar-2021 16:49:28.528 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\docs]
+29-Mar-2021 16:49:28.840 WARNING [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [151] milliseconds.
+29-Mar-2021 16:49:28.861 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\docs] has finished in [333] ms
+29-Mar-2021 16:49:28.862 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\examples]
+29-Mar-2021 16:49:29.167 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\examples] has finished in [305] ms
+29-Mar-2021 16:49:29.167 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\host-manager]
+29-Mar-2021 16:49:29.195 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\host-manager] has finished in [28] ms
+29-Mar-2021 16:49:29.195 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\manager]
+29-Mar-2021 16:49:29.218 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\manager] has finished in [23] ms
+29-Mar-2021 16:49:29.218 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\ROOT]
+29-Mar-2021 16:49:29.238 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\ROOT] has finished in [20] ms
+29-Mar-2021 16:49:29.238 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\rootMyServlet]
+29-Mar-2021 16:49:29.264 SEVERE [main] org.apache.catalina.startup.HostConfig.deployDirectory Error deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\rootMyServlet]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:720)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:743)
+		at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1187)
+		at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:2015)
+		at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:112)
+		at org.apache.catalina.startup.HostConfig.deployDirectories(HostConfig.java:1097)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:479)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1701)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:320)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:936)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:880)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:434)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:795)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/rootMyServlet]]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:440)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:717)
+		... 37 more
+	Caused by: java.lang.IllegalArgumentException: Servlet mapping specifies an unknown servlet name [idServlet001A]
+		at org.apache.catalina.core.StandardContext.addServletMappingDecoded(StandardContext.java:3239)
+		at org.apache.catalina.Context.addServletMappingDecoded(Context.java:906)
+		at org.apache.catalina.startup.ContextConfig.configureContext(ContextConfig.java:1562)
+		at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1329)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:986)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:303)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5031)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		... 38 more
+29-Mar-2021 16:49:29.268 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\rootMyServlet] has finished in [29] ms
+29-Mar-2021 16:49:29.275 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 16:49:29.294 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [798] milliseconds
+29-Mar-2021 16:53:49.572 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.reload Reloading context [/rootMyServlet]
+29-Mar-2021 16:53:50.139 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+29-Mar-2021 16:53:50.143 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 16:53:50.293 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+29-Mar-2021 16:53:50.310 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 16:53:50.335 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 16:53:52.223 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.0.4
+29-Mar-2021 16:53:52.224 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 5 2021 11:07:15 UTC
+29-Mar-2021 16:53:52.225 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.0.4.0
+29-Mar-2021 16:53:52.225 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+29-Mar-2021 16:53:52.225 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+29-Mar-2021 16:53:52.225 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+29-Mar-2021 16:53:52.225 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Android\Android Studio\jre\jre
+29-Mar-2021 16:53:52.225 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_242-release-1644-b01
+29-Mar-2021 16:53:52.226 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            JetBrains s.r.o
+29-Mar-2021 16:53:52.226 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10
+29-Mar-2021 16:53:52.226 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10
+29-Mar-2021 16:53:52.226 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\conf\logging.properties
+29-Mar-2021 16:53:52.226 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+29-Mar-2021 16:53:52.226 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+29-Mar-2021 16:53:52.227 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+29-Mar-2021 16:53:52.227 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+29-Mar-2021 16:53:52.231 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10
+29-Mar-2021 16:53:52.231 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10
+29-Mar-2021 16:53:52.231 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\temp
+29-Mar-2021 16:53:52.236 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [C:\Program Files\Android\Android Studio\jre\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Python39\Scripts\;C:\Python39\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\MATLAB\R2020b\bin;C:\Program Files\Java\jdk-16\bin;C:\Users\deese\AppData\Local\Microsoft\WindowsApps;C:\Users\deese\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\deese\AppData\Roaming\npm;C:\Users\deese\AppData\Local\Android\Sdk\platform-tools;;.]
+29-Mar-2021 16:53:52.436 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 16:53:52.449 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [355] milliseconds
+29-Mar-2021 16:53:52.463 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+29-Mar-2021 16:53:52.463 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.0.4]
+29-Mar-2021 16:53:52.463 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\docs]
+29-Mar-2021 16:53:52.768 WARNING [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [152] milliseconds.
+29-Mar-2021 16:53:52.775 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\docs] has finished in [312] ms
+29-Mar-2021 16:53:52.775 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\examples]
+29-Mar-2021 16:53:53.038 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\examples] has finished in [263] ms
+29-Mar-2021 16:53:53.038 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\host-manager]
+29-Mar-2021 16:53:53.055 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\host-manager] has finished in [17] ms
+29-Mar-2021 16:53:53.055 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\manager]
+29-Mar-2021 16:53:53.072 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\manager] has finished in [17] ms
+29-Mar-2021 16:53:53.072 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\ROOT]
+29-Mar-2021 16:53:53.088 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\ROOT] has finished in [16] ms
+29-Mar-2021 16:53:53.104 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\rootMyServlet]
+29-Mar-2021 16:53:53.136 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\rootMyServlet] has finished in [32] ms
+29-Mar-2021 16:53:53.140 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 16:53:53.151 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [701] milliseconds
+29-Mar-2021 16:57:03.352 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.reload Reloading context [/rootMyServlet]
+29-Mar-2021 16:57:03.354 INFO [Catalina-utility-1] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/rootMyServlet] has started
+29-Mar-2021 16:57:03.414 INFO [Catalina-utility-1] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/rootMyServlet] is completed
+29-Mar-2021 16:57:07.015 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+29-Mar-2021 16:57:07.015 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 16:57:07.155 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+29-Mar-2021 16:57:07.172 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 16:57:07.204 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 16:57:14.857 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.0.4
+29-Mar-2021 16:57:14.857 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 5 2021 11:07:15 UTC
+29-Mar-2021 16:57:14.857 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.0.4.0
+29-Mar-2021 16:57:14.857 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+29-Mar-2021 16:57:14.857 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+29-Mar-2021 16:57:14.857 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+29-Mar-2021 16:57:14.857 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Android\Android Studio\jre\jre
+29-Mar-2021 16:57:14.857 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_242-release-1644-b01
+29-Mar-2021 16:57:14.857 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            JetBrains s.r.o
+29-Mar-2021 16:57:14.857 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10
+29-Mar-2021 16:57:14.857 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10
+29-Mar-2021 16:57:14.857 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\conf\logging.properties
+29-Mar-2021 16:57:14.857 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+29-Mar-2021 16:57:14.857 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+29-Mar-2021 16:57:14.857 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+29-Mar-2021 16:57:14.857 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+29-Mar-2021 16:57:14.857 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10
+29-Mar-2021 16:57:14.857 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10
+29-Mar-2021 16:57:14.857 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\temp
+29-Mar-2021 16:57:14.874 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [C:\Program Files\Android\Android Studio\jre\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Python39\Scripts\;C:\Python39\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\MATLAB\R2020b\bin;C:\Program Files\Java\jdk-16\bin;C:\Users\deese\AppData\Local\Microsoft\WindowsApps;C:\Users\deese\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\deese\AppData\Roaming\npm;C:\Users\deese\AppData\Local\Android\Sdk\platform-tools;;.]
+29-Mar-2021 16:57:15.054 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 16:57:15.070 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [325] milliseconds
+29-Mar-2021 16:57:15.086 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+29-Mar-2021 16:57:15.086 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.0.4]
+29-Mar-2021 16:57:15.086 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\docs]
+29-Mar-2021 16:57:15.369 WARNING [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [136] milliseconds.
+29-Mar-2021 16:57:15.385 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\docs] has finished in [299] ms
+29-Mar-2021 16:57:15.385 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\examples]
+29-Mar-2021 16:57:15.646 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\examples] has finished in [261] ms
+29-Mar-2021 16:57:15.646 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\host-manager]
+29-Mar-2021 16:57:15.661 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\host-manager] has finished in [15] ms
+29-Mar-2021 16:57:15.677 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\manager]
+29-Mar-2021 16:57:15.694 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\manager] has finished in [17] ms
+29-Mar-2021 16:57:15.694 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\ROOT]
+29-Mar-2021 16:57:15.711 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\ROOT] has finished in [17] ms
+29-Mar-2021 16:57:15.711 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\rootMyServlet]
+29-Mar-2021 16:57:15.745 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\rootMyServlet] has finished in [34] ms
+29-Mar-2021 16:57:15.745 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 16:57:15.761 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [689] milliseconds
+29-Mar-2021 16:58:05.798 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.reload Reloading context [/rootMyServlet]
+29-Mar-2021 16:58:05.798 INFO [Catalina-utility-2] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/rootMyServlet] has started
+29-Mar-2021 16:58:05.840 INFO [Catalina-utility-2] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/rootMyServlet] is completed
+29-Mar-2021 16:58:34.403 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+29-Mar-2021 16:58:34.403 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 16:58:34.540 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+29-Mar-2021 16:58:34.556 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 16:58:34.587 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 16:58:38.079 SEVERE [main] org.apache.catalina.startup.Catalina.stopServer Could not contact [localhost:8005] (base port [8005] and offset [0]). Tomcat may not be running.
+29-Mar-2021 16:58:38.079 SEVERE [main] org.apache.catalina.startup.Catalina.stopServer Error stopping Catalina
+	java.net.ConnectException: Connection refused: connect
+		at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+		at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+		at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+		at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+		at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+		at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+		at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+		at java.net.Socket.connect(Socket.java:607)
+		at java.net.Socket.connect(Socket.java:556)
+		at java.net.Socket.<init>(Socket.java:452)
+		at java.net.Socket.<init>(Socket.java:229)
+		at org.apache.catalina.startup.Catalina.stopServer(Catalina.java:692)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at org.apache.catalina.startup.Bootstrap.stopServer(Bootstrap.java:388)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:478)
+29-Mar-2021 16:58:40.468 SEVERE [main] org.apache.catalina.startup.Catalina.stopServer Could not contact [localhost:8005] (base port [8005] and offset [0]). Tomcat may not be running.
+29-Mar-2021 16:58:40.470 SEVERE [main] org.apache.catalina.startup.Catalina.stopServer Error stopping Catalina
+	java.net.ConnectException: Connection refused: connect
+		at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+		at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+		at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+		at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+		at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+		at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+		at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+		at java.net.Socket.connect(Socket.java:607)
+		at java.net.Socket.connect(Socket.java:556)
+		at java.net.Socket.<init>(Socket.java:452)
+		at java.net.Socket.<init>(Socket.java:229)
+		at org.apache.catalina.startup.Catalina.stopServer(Catalina.java:692)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at org.apache.catalina.startup.Bootstrap.stopServer(Bootstrap.java:388)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:478)
+29-Mar-2021 16:58:44.728 SEVERE [main] org.apache.catalina.startup.Catalina.stopServer Could not contact [localhost:8005] (base port [8005] and offset [0]). Tomcat may not be running.
+29-Mar-2021 16:58:47.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.0.4
+29-Mar-2021 16:58:47.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 5 2021 11:07:15 UTC
+29-Mar-2021 16:58:47.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.0.4.0
+29-Mar-2021 16:58:47.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+29-Mar-2021 16:58:47.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+29-Mar-2021 16:58:47.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+29-Mar-2021 16:58:47.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Android\Android Studio\jre\jre
+29-Mar-2021 16:58:47.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_242-release-1644-b01
+29-Mar-2021 16:58:47.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            JetBrains s.r.o
+29-Mar-2021 16:58:47.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10
+29-Mar-2021 16:58:47.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10
+29-Mar-2021 16:58:47.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\conf\logging.properties
+29-Mar-2021 16:58:47.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+29-Mar-2021 16:58:47.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+29-Mar-2021 16:58:47.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+29-Mar-2021 16:58:47.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+29-Mar-2021 16:58:47.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10
+29-Mar-2021 16:58:47.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10
+29-Mar-2021 16:58:47.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\temp
+29-Mar-2021 16:58:47.490 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [C:\Program Files\Android\Android Studio\jre\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Python39\Scripts\;C:\Python39\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\MATLAB\R2020b\bin;C:\Program Files\Java\jdk-16\bin;C:\Users\deese\AppData\Local\Microsoft\WindowsApps;C:\Users\deese\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\deese\AppData\Roaming\npm;C:\Users\deese\AppData\Local\Android\Sdk\platform-tools;;.]
+29-Mar-2021 16:58:47.709 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 16:58:47.724 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [352] milliseconds
+29-Mar-2021 16:58:47.746 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+29-Mar-2021 16:58:47.746 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.0.4]
+29-Mar-2021 16:58:47.758 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\docs]
+29-Mar-2021 16:58:48.083 WARNING [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [157] milliseconds.
+29-Mar-2021 16:58:48.104 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\docs] has finished in [347] ms
+29-Mar-2021 16:58:48.104 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\examples]
+29-Mar-2021 16:58:48.372 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\examples] has finished in [268] ms
+29-Mar-2021 16:58:48.372 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\host-manager]
+29-Mar-2021 16:58:48.405 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\host-manager] has finished in [33] ms
+29-Mar-2021 16:58:48.405 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\manager]
+29-Mar-2021 16:58:48.426 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\manager] has finished in [21] ms
+29-Mar-2021 16:58:48.426 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\ROOT]
+29-Mar-2021 16:58:48.445 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\ROOT] has finished in [19] ms
+29-Mar-2021 16:58:48.445 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\rootMyServlet]
+29-Mar-2021 16:58:48.477 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\rootMyServlet] has finished in [32] ms
+29-Mar-2021 16:58:48.477 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 16:58:48.477 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [765] milliseconds
+29-Mar-2021 17:07:24.880 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+29-Mar-2021 17:07:24.880 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 17:07:25.022 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+29-Mar-2021 17:07:25.044 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 17:07:25.068 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 17:08:22.685 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.0.4
+29-Mar-2021 17:08:22.701 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 5 2021 11:07:15 UTC
+29-Mar-2021 17:08:22.701 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.0.4.0
+29-Mar-2021 17:08:22.701 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+29-Mar-2021 17:08:22.701 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+29-Mar-2021 17:08:22.701 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+29-Mar-2021 17:08:22.701 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Android\Android Studio\jre\jre
+29-Mar-2021 17:08:22.701 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_242-release-1644-b01
+29-Mar-2021 17:08:22.701 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            JetBrains s.r.o
+29-Mar-2021 17:08:22.701 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10
+29-Mar-2021 17:08:22.701 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10
+29-Mar-2021 17:08:22.701 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\conf\logging.properties
+29-Mar-2021 17:08:22.701 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+29-Mar-2021 17:08:22.701 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+29-Mar-2021 17:08:22.701 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+29-Mar-2021 17:08:22.701 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+29-Mar-2021 17:08:22.701 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10
+29-Mar-2021 17:08:22.701 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10
+29-Mar-2021 17:08:22.701 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\temp
+29-Mar-2021 17:08:22.701 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [C:\Program Files\Android\Android Studio\jre\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Python39\Scripts\;C:\Python39\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\MATLAB\R2020b\bin;C:\Program Files\Java\jdk-16\bin;C:\Users\deese\AppData\Local\Microsoft\WindowsApps;C:\Users\deese\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\deese\AppData\Roaming\npm;C:\Users\deese\AppData\Local\Android\Sdk\platform-tools;;.]
+29-Mar-2021 17:08:22.897 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 17:08:22.897 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [331] milliseconds
+29-Mar-2021 17:08:22.913 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+29-Mar-2021 17:08:22.928 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.0.4]
+29-Mar-2021 17:08:22.931 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\docs]
+29-Mar-2021 17:08:23.228 WARNING [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [146] milliseconds.
+29-Mar-2021 17:08:23.244 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\docs] has finished in [312] ms
+29-Mar-2021 17:08:23.244 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\examples]
+29-Mar-2021 17:08:23.498 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\examples] has finished in [254] ms
+29-Mar-2021 17:08:23.498 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\host-manager]
+29-Mar-2021 17:08:23.523 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\host-manager] has finished in [25] ms
+29-Mar-2021 17:08:23.523 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\manager]
+29-Mar-2021 17:08:23.543 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\manager] has finished in [20] ms
+29-Mar-2021 17:08:23.543 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\ROOT]
+29-Mar-2021 17:08:23.561 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\ROOT] has finished in [18] ms
+29-Mar-2021 17:08:23.562 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\rootMyServlet]
+29-Mar-2021 17:08:23.581 SEVERE [main] org.apache.catalina.startup.HostConfig.deployDirectory Error deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\rootMyServlet]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:720)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:743)
+		at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1187)
+		at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:2015)
+		at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:112)
+		at org.apache.catalina.startup.HostConfig.deployDirectories(HostConfig.java:1097)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:479)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1701)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:320)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:936)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:880)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:434)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:795)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/rootMyServlet]]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:440)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:717)
+		... 37 more
+	Caused by: java.lang.IllegalArgumentException: Servlet mapping specifies an unknown servlet name [callMyServlet]
+		at org.apache.catalina.core.StandardContext.addServletMappingDecoded(StandardContext.java:3239)
+		at org.apache.catalina.Context.addServletMappingDecoded(Context.java:906)
+		at org.apache.catalina.startup.ContextConfig.configureContext(ContextConfig.java:1562)
+		at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1329)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:986)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:303)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5031)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		... 38 more
+29-Mar-2021 17:08:23.583 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\rootMyServlet] has finished in [21] ms
+29-Mar-2021 17:08:23.589 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 17:08:23.600 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [688] milliseconds
+29-Mar-2021 17:09:02.986 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+29-Mar-2021 17:09:02.990 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 17:09:03.122 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+29-Mar-2021 17:09:03.141 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 17:09:03.170 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 17:09:14.049 SEVERE [main] org.apache.catalina.startup.Catalina.stopServer Could not contact [localhost:8005] (base port [8005] and offset [0]). Tomcat may not be running.
+29-Mar-2021 17:09:14.051 SEVERE [main] org.apache.catalina.startup.Catalina.stopServer Error stopping Catalina
+	java.net.ConnectException: Connection refused: connect
+		at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+		at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+		at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+		at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+		at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+		at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+		at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+		at java.net.Socket.connect(Socket.java:607)
+		at java.net.Socket.connect(Socket.java:556)
+		at java.net.Socket.<init>(Socket.java:452)
+		at java.net.Socket.<init>(Socket.java:229)
+		at org.apache.catalina.startup.Catalina.stopServer(Catalina.java:692)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at org.apache.catalina.startup.Bootstrap.stopServer(Bootstrap.java:388)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:478)
+29-Mar-2021 17:09:18.272 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.0.4
+29-Mar-2021 17:09:18.272 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 5 2021 11:07:15 UTC
+29-Mar-2021 17:09:18.272 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.0.4.0
+29-Mar-2021 17:09:18.272 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+29-Mar-2021 17:09:18.272 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+29-Mar-2021 17:09:18.272 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+29-Mar-2021 17:09:18.272 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Android\Android Studio\jre\jre
+29-Mar-2021 17:09:18.272 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_242-release-1644-b01
+29-Mar-2021 17:09:18.272 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            JetBrains s.r.o
+29-Mar-2021 17:09:18.272 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10
+29-Mar-2021 17:09:18.272 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10
+29-Mar-2021 17:09:18.272 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\conf\logging.properties
+29-Mar-2021 17:09:18.272 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+29-Mar-2021 17:09:18.272 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+29-Mar-2021 17:09:18.272 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+29-Mar-2021 17:09:18.272 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+29-Mar-2021 17:09:18.272 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10
+29-Mar-2021 17:09:18.272 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10
+29-Mar-2021 17:09:18.272 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\temp
+29-Mar-2021 17:09:18.272 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [C:\Program Files\Android\Android Studio\jre\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Python39\Scripts\;C:\Python39\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\MATLAB\R2020b\bin;C:\Program Files\Java\jdk-16\bin;C:\Users\deese\AppData\Local\Microsoft\WindowsApps;C:\Users\deese\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\deese\AppData\Roaming\npm;C:\Users\deese\AppData\Local\Android\Sdk\platform-tools;;.]
+29-Mar-2021 17:09:18.453 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 17:09:18.469 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [323] milliseconds
+29-Mar-2021 17:09:18.484 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+29-Mar-2021 17:09:18.484 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.0.4]
+29-Mar-2021 17:09:18.501 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\docs]
+29-Mar-2021 17:09:18.791 WARNING [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [161] milliseconds.
+29-Mar-2021 17:09:18.807 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\docs] has finished in [306] ms
+29-Mar-2021 17:09:18.807 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\examples]
+29-Mar-2021 17:09:19.065 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\examples] has finished in [258] ms
+29-Mar-2021 17:09:19.066 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\host-manager]
+29-Mar-2021 17:09:19.093 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\host-manager] has finished in [27] ms
+29-Mar-2021 17:09:19.093 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\manager]
+29-Mar-2021 17:09:19.115 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\manager] has finished in [22] ms
+29-Mar-2021 17:09:19.116 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\ROOT]
+29-Mar-2021 17:09:19.134 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\ROOT] has finished in [18] ms
+29-Mar-2021 17:09:19.134 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\rootMyServlet]
+29-Mar-2021 17:09:19.165 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\deese\Dropbox\_SharedWithMacbook\2021.03.18 Servers Video Lessons\Module005 Java Servlet via Tomcat\_Resources\Tomcat10\webapps\rootMyServlet] has finished in [31] ms
+29-Mar-2021 17:09:19.168 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 17:09:19.179 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [700] milliseconds
+29-Mar-2021 17:12:49.407 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.reload Reloading context [/rootMyServlet]
+29-Mar-2021 17:12:49.408 INFO [Catalina-utility-2] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/rootMyServlet] has started
+29-Mar-2021 17:12:49.445 SEVERE [Catalina-utility-2] org.apache.tomcat.util.digester.Digester.fatalError Parse fatal error at line [3] column [6]
+	org.xml.sax.SAXParseException; systemId: file:/C:/Users/deese/Dropbox/_SharedWithMacbook/2021.03.18%20Servers%20Video%20Lessons/Module005%20Java%20Servlet%20via%20Tomcat/_Resources/Tomcat10/webapps/rootMyServlet/WEB-INF/web.xml; lineNumber: 3; columnNumber: 6; The processing instruction target matching "[xX][mM][lL]" is not allowed.
+		at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+		at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+		at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+		at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+		at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+		at com.sun.org.apache.xerces.internal.impl.XMLScanner.scanPIData(XMLScanner.java:746)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanPIData(XMLDocumentFragmentScannerImpl.java:1014)
+		at com.sun.org.apache.xerces.internal.impl.XMLScanner.scanPI(XMLScanner.java:714)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:907)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+		at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:842)
+		at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:771)
+		at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+		at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+		at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1539)
+		at org.apache.tomcat.util.descriptor.web.WebXmlParser.parseWebXml(WebXmlParser.java:119)
+		at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1277)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:986)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:303)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5031)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardContext.reload(StandardContext.java:3755)
+		at org.apache.catalina.startup.HostConfig.reload(HostConfig.java:1528)
+		at org.apache.catalina.startup.HostConfig.checkResources(HostConfig.java:1501)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1737)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:316)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1151)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1353)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1357)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1335)
+		at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+		at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+		at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+		at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:748)
+29-Mar-2021 17:12:49.447 SEVERE [Catalina-utility-2] org.apache.tomcat.util.descriptor.web.WebXmlParser.parseWebXml Parse error in application web.xml file at [file:/C:/Users/deese/Dropbox/_SharedWithMacbook/2021.03.18%20Servers%20Video%20Lessons/Module005%20Java%20Servlet%20via%20Tomcat/_Resources/Tomcat10/webapps/rootMyServlet/WEB-INF/web.xml]
+	org.xml.sax.SAXParseException; systemId: file:/C:/Users/deese/Dropbox/_SharedWithMacbook/2021.03.18%20Servers%20Video%20Lessons/Module005%20Java%20Servlet%20via%20Tomcat/_Resources/Tomcat10/webapps/rootMyServlet/WEB-INF/web.xml; lineNumber: 3; columnNumber: 6; The processing instruction target matching "[xX][mM][lL]" is not allowed.
+		at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+		at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+		at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+		at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+		at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+		at com.sun.org.apache.xerces.internal.impl.XMLScanner.scanPIData(XMLScanner.java:746)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanPIData(XMLDocumentFragmentScannerImpl.java:1014)
+		at com.sun.org.apache.xerces.internal.impl.XMLScanner.scanPI(XMLScanner.java:714)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:907)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+		at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:842)
+		at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:771)
+		at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+		at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+		at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1539)
+		at org.apache.tomcat.util.descriptor.web.WebXmlParser.parseWebXml(WebXmlParser.java:119)
+		at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1277)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:986)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:303)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5031)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardContext.reload(StandardContext.java:3755)
+		at org.apache.catalina.startup.HostConfig.reload(HostConfig.java:1528)
+		at org.apache.catalina.startup.HostConfig.checkResources(HostConfig.java:1501)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1737)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:316)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1151)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1353)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1357)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1335)
+		at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+		at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+		at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+		at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:748)
+29-Mar-2021 17:12:49.450 SEVERE [Catalina-utility-2] org.apache.tomcat.util.descriptor.web.WebXmlParser.parseWebXml Occurred at line [3] column [6]
+29-Mar-2021 17:12:49.453 SEVERE [Catalina-utility-2] org.apache.catalina.startup.ContextConfig.configureStart Marking this application unavailable due to previous error(s)
+29-Mar-2021 17:12:49.454 SEVERE [Catalina-utility-2] org.apache.catalina.core.StandardContext.startInternal One or more components marked the context as not correctly configured
+29-Mar-2021 17:12:49.454 SEVERE [Catalina-utility-2] org.apache.catalina.core.StandardContext.startInternal Context [/rootMyServlet] startup failed due to previous errors
+29-Mar-2021 17:12:49.456 INFO [Catalina-utility-2] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/rootMyServlet] is completed
+29-Mar-2021 17:12:50.110 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+29-Mar-2021 17:12:50.111 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 17:12:50.245 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+29-Mar-2021 17:12:50.253 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+29-Mar-2021 17:12:50.291 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]

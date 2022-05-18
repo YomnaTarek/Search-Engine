@@ -1,0 +1,31 @@
+<!-- //https://www.baeldung.com/java-lang-unsupportedclassversion -->
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app version="3.0"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+ 
+	<!-- NOTE: This should be saved within WEB-INF folder directly as web.xml -->
+	<!-- ACTION: Define the servlet's name as well as its class, including the package location -->
+ 
+	<!-- As we can see, the servlet is declared using the <servlet> element and its children: -->
+	<!-- <servlet-name>: specifies a descriptive name for the servlet. -->
+	<!-- <servlet-class>: specifies fully qualified name of the servlet class. -->
+	<!-- And the servlet is configured to serving requests using the <servlet-mapping> element and its children: -->
+	<!-- <servlet-name>: specifies name of a servlet which is declared using the <servlet> element. -->
+	<!-- <url-pattern>: specifies a URL pattern to be mapped with the servlet. The pattern can be exact match, extension match or directory match. Here we specify the exact match. -->
+ 
+	<servlet>
+		<servlet-name>rootMyServlet</servlet-name>
+		<servlet-class>packageMyServlet.callMyServlet</servlet-class>
+	</servlet>
+ 
+	<!-- ACTION: Define the URL element that will actually call the servlet, which is /sayhello in this case -->
+	<!-- NOTE: All <servlet> elements MUST be grouped together and placed IN FRONT of the <servlet-mapping> elements -->
+ 
+	<servlet-mapping>
+		<servlet-name>rootMyServlet</servlet-name>
+		<url-pattern>/go</url-pattern>
+	</servlet-mapping>
+</web-app>

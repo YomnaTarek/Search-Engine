@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app version="3.0"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+ 
+	<!-- NOTE: This should be saved within WEB-INF folder directly as web.xml -->
+	<!-- ACTION: Define the servlet's name as well as its class, including the package location -->
+ 
+ <servlet>
+  <servlet-name>nameApp001</servlet-name>
+  <servlet-class>servletApp</servlet-class>
+ </servlet>
+</web-app>

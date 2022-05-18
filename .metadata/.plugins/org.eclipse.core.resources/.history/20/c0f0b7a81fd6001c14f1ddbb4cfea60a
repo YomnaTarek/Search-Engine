@@ -1,0 +1,57 @@
+// NOTE: This file will be saved as "<CATALINA_HOME>\webapps\servletHello180816\WEB-INF\src\packageServletTest\servletHello.java".
+
+// ACTION: Define the package to be accessed.
+package packageApp;
+ 
+// ACTION: Define import libraries.
+import java.io.*;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
+
+// ACTION: Define the public class, based on the HttpServlet model.
+public class servletApp extends HttpServlet {
+   
+	// ACTION: Define method from HttpServlet that responds to GET requests.
+	@Override
+	public void doGet(HttpServletRequest requestServlet_In, HttpServletResponse responseServlet_Out) throws IOException, ServletException {
+      
+		try {
+			// ACTION: Define responseServlet_Out/MIME type.
+			responseServlet_Out.setContentType("text/html;charset=UTF-8");
+		
+			// ACTION: Allocate a output writer to write the responseServlet_Out message into the network socket
+			PrintWriter writerForResponse = responseServlet_Out.getWriter();
+ 
+			// ACTION: Physically write the output.
+			try {
+			
+				// ACTION: Create an HTML document dynamically useing the writerForResponse
+				// as shown below.
+				writerForResponse.println("<!DOCTYPE html>");
+				writerForResponse.println("<html><head>");
+				writerForResponse.println("<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>");
+				writerForResponse.println("<title>Hello, World</title></head>");
+				writerForResponse.println("<body>");
+				writerForResponse.println("<h1>Hello, world!</h1>");  // says Hello
+         
+				// ACTION Echo client's requestServlet_In information
+				writerForResponse.println("<p>Request URI: " + requestServlet_In.getRequestURI() + "</p>");
+				writerForResponse.println("<p>Protocol: " + requestServlet_In.getProtocol() + "</p>");
+				writerForResponse.println("<p>PathInfo: " + requestServlet_In.getPathInfo() + "</p>");
+				writerForResponse.println("<p>Remote Address: " + requestServlet_In.getRemoteAddr() + "</p>");
+         
+				// ACTION" Generate a random number upon each requestServlet_In
+				writerForResponse.println("<p>A Random Number: <strong>" + Math.random() + "</strong></p>");
+				writerForResponse.println("</body>");
+				writerForResponse.println("</html>");
+		
+			} finally {
+				
+				// ACTION: Don't forget to close the PrintWriter.
+				writerForResponse.close();
+			}
+		} catch (Exception e100) {
+			// Do nothing...
+		}
+	}
+}

@@ -1,0 +1,70 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+public class IndexerDbConnection {
+	
+		static Statement statement;
+		static Connection conn;
+		    
+		static public void DatabaseConnect(){
+		
+			String url = "jdbc:sqlserver://DESKTOP-4T81S99;databaseName=SearchEngine;integratedSecurity=true;encrypt=true;trustServerCertificate=true;";
+		     try {
+		    	//Loading the required JDBC Driver class
+		 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");	
+		 		
+		 		//Creating a connection to the database
+		 		Connection connection = DriverManager.getConnection(url);
+		 		//System.out.println(conn);
+		 		//Executing SQL query and fetching the result
+		 		Statement st = conn.createStatement();
+		 		String sqlStr = "select * from Link";
+		 		ResultSet rs = st.executeQuery(sqlStr);
+		 		while (rs.next()) {
+		 			System.out.println(rs.getString(2));
+		 		}		
+		 	}
+		     catch (Exception e) {
+		         System.out.print("Database Not Connected"+e);
+		     }
+		  }
+		static public void getWordDegrees(ArrayList<String> degrees)
+		{
+			try {
+			ResultSet rs = statement.executeQuery("SELECT * FROM Link");
+			ResultSetMetaData rsmd = rs.getMetaData();
+			int columnCount = rsmd.getColumnCount();
+
+			// The column count starts from 1
+			for (int i = 1; i <= columnCount; i++ ) {
+			  String name = rsmd.getColumnName(i);
+			  // Do stuff with name
+			  degrees.add(name);
+			}
+			}
+			catch(Exception e)
+			{				
+				System.out.print("couldnt fetch"+e);
+
+				
+			}
+		
+		}
+	
+		
+		public static void main(String args[]) throws Exception {
+			IndexerDbConnection id = new IndexerDbConnection();
+			id.DatabaseConnect();
+			ArrayList<String> degrees = new ArrayList<String>();
+			id.getWordDegrees(degrees);
+			System.out.println(degrees);
+			
+			return;
+		}
+}
