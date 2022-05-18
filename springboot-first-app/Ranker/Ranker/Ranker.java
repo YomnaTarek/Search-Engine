@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.net.MalformedURLException;
 import DBManager.DBManager;
 import java.lang.Math;
+
 public class Ranker {
 
 	public Ranker() {
@@ -93,14 +94,15 @@ public class Ranker {
         int boldCount=DBManager.getCountBold(queryWord, url.toString());
         int italicCount=DBManager.getCountItalic(queryWord, url.toString());
         int pCount= DBManager.getCountP(queryWord, url.toString());
-        System.out.println(titleCount +" "+h1Count+" "+h2Count+" "+h3Count+" "+h4Count+" "+h5Count+" "+boldCount+" "+italicCount+" ");
+       // System.out.println(titleCount +" "+h1Count+" "+h2Count+" "+h3Count+" "+h4Count+" "+h5Count+" "+boldCount+" "+italicCount+" ");
         double wordFrequency=0.3*titleCount+0.15*h1Count+0.1*(h2Count+h3Count)+0.04*(h4Count+h5Count+h6Count)+0.1*(italicCount+boldCount)+0.03*pCount;
-        System.out.println(wordFrequency);
+        //System.out.println(wordFrequency);
         return (double)((double)wordFrequency/(double)totalWords);
     }
 	// relavance algorithm tf-idf to calculate relevance
     public static void pageRelevance(ArrayList<String> query) throws MalformedURLException, SQLException
     {
+        DBManager.addPopularity();
         //getting IDF
         List<URL> links = DBManager.getAllURLs();//to get revelance to all links
         for(String word :query)
@@ -110,19 +112,56 @@ public class Ranker {
                 {
                     double tf=calculatingTF(link, word);
                     double rank=idf*tf;
-                    System.out.println(rank +" "+idf+" "+tf);
-                    System.out.println(link.toString()+"\n");
                     DBManager.updateRank(link.toString(), rank);//addition(tf-idf of all query words) is done inside the database
                 }
         }
 
     }
-	
+    public static void phraseSearchRanking(ArrayList<String> query) throws MalformedURLException, SQLException
+    {
+        DBManager.resetRank();//setting all ranks =0
+        //getting IDF
+        List<URL> links = DBManager.getAllURLs();//to get revelance to all links
+        int length=query.size();
+        int count=0;
+        double rank=0;
+        
+        double calculationRanks[] = new double[length];
+        for(URL link :links)
+        {
+            Arrays.fill(calculationRanks,0);
+            int i=0;
+            count=0;
+            for(String word:query)
+            {
+                double tf=calculatingTF(link, word);
+                double idf=calculatingIDF(word);
+                rank=idf*tf;
+                calculationRanks[i]=rank;
+                i++;
+                if(tf>0)
+                {
+                    count++;
+                }
+            }
+            if(count==length)
+            {
+                DBManager.addPopularityForURL(link.toString());
+               for(int j=0; j<calculationRanks.length; j++)
+                {
+                    DBManager.updateRank(link.toString(), calculationRanks[j]);
+                }
+            }
+        }
+
+    }
 	public static void main(String[] args) throws MalformedURLException, SQLException {
+        pageRanker();
         ArrayList<String> q=new ArrayList<>();
         q.add("habiba");
         q.add("zeh2et");
-        pageRelevance(q);
+        phraseSearchRanking(q);
     }
 
 }
+

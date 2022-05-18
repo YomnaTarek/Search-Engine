@@ -108,7 +108,14 @@ public static void main(String[] args) throws IOException, SQLException {
     ArrayList<String> stopWordsList=fetchStopWords();      //fetching the stop words.
     ArrayList<String> processedWords=preProcessing (query,stopWordsList); //preprocessing the search query.
     System.out.println(processedWords);
+    if(query.startsWith("\"") && query.endsWith("\""))
+    {
+    Ranker.phraseSearchRanking(processedWords);
+    }
+    else
+    {
     Ranker.pageRelevance(processedWords);
+    }
     scan.close();
 
 }
