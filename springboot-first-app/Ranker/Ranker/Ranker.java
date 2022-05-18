@@ -155,13 +155,7 @@ public class Ranker {
         }
 
     }
-	public static void main(String[] args) throws MalformedURLException, SQLException {
-        pageRanker();
-        ArrayList<String> q=new ArrayList<>();
-        q.add("habiba");
-        q.add("zeh2et");
-        phraseSearchRanking(q);
-    }
+	
 
 }
 
