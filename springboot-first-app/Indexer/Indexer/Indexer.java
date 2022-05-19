@@ -94,7 +94,7 @@ public class Indexer {
 					{
 						//Check if the link is instagram or facebook or google,if yes,then indexing is not possible.
 						String tempLink=link.toLowerCase();
-						if(tempLink.contains("facebook") || tempLink.contains("google") || tempLink.contains("instagram") )
+						if(tempLink.contains("facebook") || tempLink.contains("google") || tempLink.contains("instagram") ||  tempLink.contains("youtube") || tempLink.contains("twitter"))
 						{
 							System.out.println("link: "+link+" is not indexable");
 							//set begin and end indexing to 1.

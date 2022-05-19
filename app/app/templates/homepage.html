@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/speechToText.js') }}">
+        </script>
+        <meta charset="UTF-8">
+        <title>Search Engine</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/title.css') }}">
+    </head>
+    <body background="{{ url_for('static', filename='img/blue.jpg') }}">
+        <section>
+            <div class="main">
+                <img src="{{ url_for('static', filename='img/clipart1855837.png') }}" class="logo">
+                <h1 class='stripe-text'>Dawar-Lee</h1>
+                <div>
+                <form method="post" action="/results">
+                <div class="searchBox">
+                    <input type="text" id="searchBox" name="searchBox" class="query" value="" >
+                    <div class="icons">
+                        <div><img src="https://img.icons8.com/dusk/35/000000/google-web-search.png"></div>
+                    </div>   
+                </div>
+                <button  type="submit" class="searchBtn">
+                    Dawar
+            </button>
+                 </form>
+                <div>
+           			<button class = "mic" type="button" onclick="runSpeechRecognition()">
+                       	<img src="https://img.icons8.com/external-smashingstocks-circular-smashing-stocks/35/000000/external-mic-webmobile-applications-smashingstocks-circular-smashing-stocks.png"/>
+               		</button>
+                   
+                    </div>
+            </div>
+            </div> 
+        </section>
+        <script>
+            let query = document.querySelector('.query');
+            let searchBtn = document.querySelector('.searchBtn');
+            searchBtn.onclick  = function(){
+                let url = 'http://localhost:8085/results?query='+ query.value;
+                window.open(url, '_self');
+            }
+            
+        </script>
+    </body>
+</html>

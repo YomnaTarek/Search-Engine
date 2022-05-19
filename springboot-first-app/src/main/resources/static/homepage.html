@@ -12,27 +12,23 @@
             <div class="main">
                 <img src="clipart1855837.png" class="logo">
                 <h1 class='stripe-text'>Dawar-Lee</h1>
-                <form action="#" th:action="@{/getQuery}" method="post" th:object="${query}">
                 <div>
                 <div class="searchBox">
-                    <input type="text"  id="searchBox" class="query"  th:value="${query}" >
-                    
+                    <input type="text"  id="searchBox" class="query" th:value="${query}" >
                     <div class="icons">
                         <div><img src="https://img.icons8.com/dusk/35/000000/google-web-search.png"></div>
                     </div>   
                 </div>
-                
+                <div>
            			<button class = "mic" type="button" onclick="runSpeechRecognition()">
                        	<img src="https://img.icons8.com/external-smashingstocks-circular-smashing-stocks/35/000000/external-mic-webmobile-applications-smashingstocks-circular-smashing-stocks.png"/>
                		</button>
-                
                     <button class="searchBtn">
                             Dawar
                     </button>
+                    </div>
             </div>
-             </form>
-            </div>
-           
+            </div> 
         </section>
         <script>
             let query = document.querySelector('.query');

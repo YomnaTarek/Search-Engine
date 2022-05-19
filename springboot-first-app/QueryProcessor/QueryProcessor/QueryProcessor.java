@@ -1,6 +1,7 @@
 package QueryProcessor;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import java.nio.file.Files;
@@ -102,9 +103,17 @@ public static ArrayList<String> preProcessing (String query, ArrayList<String> s
 public static void main(String[] args) throws IOException, SQLException {
 
     //The user should enter the search query.
-    System.out.println("Please enter the search query"); 
-    Scanner scan = new Scanner(System.in);
-    String query = scan.nextLine();
+	Scanner scanner = new Scanner(new File("C:\\Users\\saiko\\OneDrive\\Desktop\\app\\app\\test.txt"));
+
+	while(scanner.hasNext())
+	{
+    //System.out.println("Please enter the search query"); 
+    //Scanner scan = new Scanner(System.in);
+    //String query = scan.nextLine();
+		String query = null;
+		if (scanner.hasNextLine()) { 
+			 query = scanner.nextLine();
+		}
     ArrayList<String> stopWordsList=fetchStopWords();      //fetching the stop words.
     ArrayList<String> processedWords=preProcessing (query,stopWordsList); //preprocessing the search query.
     System.out.println(processedWords);
@@ -116,8 +125,25 @@ public static void main(String[] args) throws IOException, SQLException {
     {
     Ranker.pageRelevance(processedWords);
     }
-    scan.close();
-
+    FileWriter myWriter = new FileWriter("C:\\Users\\saiko\\OneDrive\\Desktop\\Search-Engine\\springboot-first-app\\linksResults", false);
+    
+  
+    for(int i = 1;i<11;i++)
+    {
+    	System.out.println("****************Page "+i+" *******************************************");
+    	ArrayList<String> urls = new ArrayList<String>();
+    	urls = DBManager.DBManager.sortResults(10, i);
+    	for(int j = 0 ;j<urls.size();j++)
+    	{
+    		System.out.println(urls.get(j));
+    		myWriter.write(urls.get(j)+"\n");
+    	}
+    }
+    myWriter.close();
+    //scan.close();
+    
+	}
+	scanner.close();
 }
 
 }

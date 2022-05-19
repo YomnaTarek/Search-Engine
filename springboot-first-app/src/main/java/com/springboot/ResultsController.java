@@ -34,8 +34,7 @@ public class ResultsController {
 		Ranker.Ranker.pageRelevance(processedQuery);
 		//ArrayList<String> results = DBManager.DBManager.sortResults(limit, pageNumber)
 		
-		//query.queryprocessor
-		//3ayza ab3at el list de lel pages
+	
 		return "results";
 	}
 	

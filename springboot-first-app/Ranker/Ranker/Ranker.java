@@ -97,7 +97,14 @@ public class Ranker {
        // System.out.println(titleCount +" "+h1Count+" "+h2Count+" "+h3Count+" "+h4Count+" "+h5Count+" "+boldCount+" "+italicCount+" ");
         double wordFrequency=0.3*titleCount+0.15*h1Count+0.1*(h2Count+h3Count)+0.04*(h4Count+h5Count+h6Count)+0.1*(italicCount+boldCount)+0.03*pCount;
         //System.out.println(wordFrequency);
+        if(totalWords !=0)
+        {
         return (double)((double)wordFrequency/(double)totalWords);
+        }
+        else
+        {
+        	return 0.0;
+        }
     }
 	// relavance algorithm tf-idf to calculate relevance
     public static void pageRelevance(ArrayList<String> query) throws MalformedURLException, SQLException

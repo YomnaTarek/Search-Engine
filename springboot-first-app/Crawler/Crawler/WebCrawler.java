@@ -51,7 +51,7 @@ public static List<URL>  readingSeed()
        
        //should be dynamic-> this is temporary
         //File myObj = new File("C:\\Users\\habib\\Desktop\\Senior1-Sem2\\APT\\Project APT\\Search-Engine\\seedList.txt");
-    	 File myObj = new File("C:\\Users\\saiko\\OneDrive\\Desktop\\Search-Engine\\SearchEngine\\seedList.txt");
+    	 File myObj = new File("C:\\Users\\saiko\\OneDrive\\Desktop\\Search-Engine\\springboot-first-app\\seedList.txt");
     	Scanner fileReader = new Scanner(myObj);
         while (fileReader.hasNextLine()) {
             String data = fileReader.nextLine();
