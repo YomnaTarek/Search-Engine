@@ -1,0 +1,106 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+public class IndexerDbConnection {
+	
+		static Statement statement;
+		static Connection conn;
+		    
+		static public void DatabaseConnect(){
+		
+			String url = "jdbc:sqlserver://DESKTOP-4T81S99;databaseName=SearchEngine;integratedSecurity=true;encrypt=true;trustServerCertificate=true;";
+		     try {
+		    	//Loading the required JDBC Driver class
+		 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");	
+		 		
+		 		//Creating a connection to the database
+		 		Connection conn = DriverManager.getConnection(url);
+		 		//System.out.println(conn);
+		 		//Executing SQL query and fetching the result
+		 		Statement st = conn.createStatement();
+		 		String sqlStr = "select * from Link";
+		 		ResultSet rs = st.executeQuery(sqlStr);
+		 		while (rs.next()) {
+		 			System.out.println(rs.getString(2));
+		 		}		
+		 	}
+		     catch (Exception e) {
+		         System.out.print("Database Not Connected"+e);
+		     }
+		  }
+		static public void getWordDegrees(ArrayList<String> degrees){
+			Statement statement = null;
+			try {
+				statement = conn.createStatement();
+			} catch (SQLException e4) {
+				// TODO Auto-generated catch block
+				e4.printStackTrace();
+			}
+			 
+			ResultSet results = null;
+			try {
+				results = statement.executeQuery("SELECT * FROM Link");
+			} catch (SQLException e3) {
+				// TODO Auto-generated catch block
+				e3.printStackTrace();
+			}
+			 
+			 
+			// Get resultset metadata
+			 
+			ResultSetMetaData metadata;
+			try {
+				metadata = results.getMetaData();
+			} catch (SQLException e2) {
+				// TODO Auto-generated catch block
+				e2.printStackTrace();
+			}
+			 
+			int columnCount;
+			try {
+				columnCount = metadata.getColumnCount();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			 
+			 
+			System.out.println("test_table columns : ");
+			 
+			 
+			// Get the column names; column indices start from 1
+			 
+			for (int i=1; i<=columnCount; i++) {
+			 
+			  String columnName;
+			try {
+				columnName = metadata.getColumnName(i);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			 
+			  System.out.println(columnName);
+			 
+			}
+			 
+			    
+		
+			}
+	
+		
+		public static void main(String args[]) throws Exception {
+			IndexerDbConnection id = new IndexerDbConnection();
+			id.DatabaseConnect();
+			ArrayList<String> degrees = new ArrayList<String>();
+			id.getWordDegrees();
+			Syst
+			return;
+		}
+}

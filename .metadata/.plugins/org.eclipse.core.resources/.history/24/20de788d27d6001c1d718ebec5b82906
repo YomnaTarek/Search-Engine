@@ -1,0 +1,71 @@
+package Frontend;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class Servlet  extends HttpServlet 
+{
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
+	{
+		String query = request.getParameter("query");
+		String pageString = request.getParameter("pageNo");
+		Integer pageNumber = Integer.parseInt(pageString);
+		response.setContentType("text/html");
+		PrintWriter outStream = response.getWriter();
+		String modifiedQuery = null;
+		if(query.contains("\""))
+		{
+			modifiedQuery = query.replace("\"", "");
+		}
+		AddSearchBar(outStream, modifiedQuery);
+		//RequestDispatcher dispatch = request.getRequestDispatcher("/WEB-INF/resu.html");
+		//dispatch.include(request, response);
+		
+		
+	}
+	
+	public static void AddSearchBar(PrintWriter outStream, String query)
+	{
+		outStream.println("<!DOCTYPE html>\r\n"
+				+ "<html>\r\n"
+				+ "\r\n"
+				+ "<head>\r\n"
+				+ "    <title>"+query+" Dawar-Lee"+"</title>\r\n"
+				+ "    <link rel=\"shortcut icon\" type=\"image/ico\" href=\"images/favicon.ico\" />\r\n"
+				+ "    <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/results.css\" />\r\n"
+				+ "</head>\r\n"
+				+ "");
+		outStream.println("<body>\r\n"
+				+ "    <div id=\"header\">\r\n"
+				+ "        <div id=\"topbar\">\r\n"
+				+ "            <div id=\"searchbar\" type=\"text\">\r\n"
+				+ "                <input id=\"searchbartext\" type=\"text\" value=\""+query+"\" />\r\n"
+				+ "                <button id=\"searchbarmic\">\r\n"
+				+ "                </button>\r\n"
+				+ "                <button id=\"searchbarbutton\">\r\n"
+				+ "                    <svg focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\">\r\n"
+				+ "                        <path\r\n"
+				+ "                            d=\"M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\">\r\n"
+				+ "                        </path>\r\n"
+				+ "                    </svg>\r\n"
+				+ "                </button>\r\n"
+				+ "            </div>");
+		
+	}
+	
+	public static void PaginationDisplay(PrintWriter outStream, int pages, String query)
+	{
+		outStream.println("<div class=\"pagebar\">\r\n"
+				+ "            <ul class=\"pagelist\">");
+		for(int i=1; i<pages; i++) {
+			outStream.println("                <li class=\"pagelistfirst\"><a href=\"ViewServlet?page="+i+"&SearchInput="+query+"\">"+i+"</a></li>\n" 
+					);
+			}
+	}
+	
+}

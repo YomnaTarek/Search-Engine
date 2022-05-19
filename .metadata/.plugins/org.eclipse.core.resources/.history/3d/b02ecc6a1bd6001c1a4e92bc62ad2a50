@@ -1,0 +1,23 @@
+
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+import java.io.IOException;
+
+public class homepage extends HttpServlet{
+
+    public void doGet(HttpServletRequest request,
+                      HttpServletResponse response)
+            throws ServletException, IOException
+    {
+        response.setStatus(200);
+        response.setContentType("text/html");
+        RequestDispatcher rd = request.getRequestDispatcher("C:\\Users\\saiko\\OneDrive\\Desktop\\Search-Engine\\SearchEngine\\src\\Frontend\\apache-tomcat-10.0.21\\webapps\\ROOT\\homepage.html");
+        rd.forward(request, response);
+    }
+
+}

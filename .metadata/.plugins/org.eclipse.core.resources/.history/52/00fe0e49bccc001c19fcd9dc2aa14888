@@ -1,0 +1,63 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.sql.SQLException;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
+
+
+
+public class IndexerDbConnection {
+	
+		static Statement statement;
+		static Connection conn;
+		    
+		static public void DatabaseConnect(){
+		
+			String url = "jdbc:sqlserver://DESKTOP-4T81S99;databaseName=SearchEngine;integratedSecurity=true;encrypt=true;trustServerCertificate=true;";
+		     try {
+		    	//Loading the required JDBC Driver class
+		 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");	
+		 		
+		 		//Creating a connection to the database
+		 		Connection conn = DriverManager.getConnection(url);
+		 		//System.out.println(conn);
+		 		//Executing SQL query and fetching the result
+		 		Statement st = conn.createStatement();
+		 		String sqlStr = "select * from Link";
+		 		ResultSet rs = st.executeQuery(sqlStr);
+		 		while (rs.next()) {
+		 			System.out.println(rs.getString(2));
+		 		}		
+		 	}
+		     catch (Exception e) {
+		         System.out.print("Database Not Connected"+e);
+		     }
+		  }
+		public static void main(String args[]) throws Exception {
+			IndexerDbConnection id = new IndexerDbConnection();
+			id.DatabaseConnect();
+			Document doc = Jsoup.connect("https://jsoup.org/download").timeout(0).get();
+			Elements words = doc.select("h1, h2, h3, h4, h5, h6,p,title,i,b");
+			String h21List =  words.text();
+			System.out.println(h21List);
+			ArrayList<String>tokensH1=new ArrayList();
+			Elements h1Tags = words.select("h3");
+			java.util.List<String> h1List = h1Tags.text();
+			if(!h1List.isEmpty()){
+				
+				ArrayList<String>tokensH11=new ArrayList();
+				for(int j=0;j<h1List.size();j++) {
+					String[] tempTokens=h1List.get(j).split("[^a-zA-Z0-9'-]");
+					tokensH11.addAll(Arrays.asList(tempTokens));
+				}
+			return;
+		}
+}

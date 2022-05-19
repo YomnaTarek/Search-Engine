@@ -1,0 +1,25 @@
+// NOTE: This file will be saved as "<CATALINA_HOME>\webapps\servletHello180816\WEB-INF\src\packageServletTest\servletHello.java".
+
+// ACTION: Define the package to be accessed.
+package packageApp;
+ 
+// ACTION: Define import libraries.
+import java.io.*;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
+
+// ACTION: Define the public class, based on the HttpServlet model.
+public class servletApp extends HttpServlet {
+   
+	// ACTION: Define method from HttpServlet that responds to GET requests.
+	@Override
+	public void doGet(HttpServletRequest requestServlet_In, HttpServletResponse responseServlet_Out) throws IOException, ServletException {
+      
+		{
+	        response.setStatus(200);
+	        response.setContentType("text/html");
+	        RequestDispatcher rd = request.getRequestDispatcher("C:\\Users\\saiko\\OneDrive\\Desktop\\Search-Engine\\SearchEngine\\src\\Frontend\\apache-tomcat-10.0.21\\webapps\\ROOT\\homepage.html");
+	        rd.forward(request, response);
+	    }
+	}
+}

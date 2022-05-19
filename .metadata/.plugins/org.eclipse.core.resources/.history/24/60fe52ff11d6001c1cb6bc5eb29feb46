@@ -1,0 +1,39 @@
+package Frontend;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+public class Servlet  extends HttpServlet 
+{
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
+	{
+		String query = request.getParameter("query");
+		String pageString = request.getParameter("pageNo");
+		Integer pageNumber = Integer.parseInt(pageString);
+		response.setContentType("text/html");
+		PrintWriter outStream = response.getWriter();
+		
+	}
+	
+	public static void AddSearchBar(PrintWriter outStream, String query)
+	{
+		if(query.contains("\""))
+		{
+			query = query.replace("\"", "");
+		}
+		outStream.println("<!DOCTYPE html>\r\n"
+				+ "<html>\r\n"
+				+ "\r\n"
+				+ "<head>\r\n"
+				+ "    <title>"+query+" Dawar-Lee"+"</title>\r\n"
+				+ "    <link rel=\"shortcut icon\" type=\"image/ico\" href=\"images/favicon.ico\" />\r\n"
+				+ "    <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/results.css\" />\r\n"
+				+ "</head>\r\n"
+				+ "");
+	}
+	
+}
